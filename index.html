@@ -941,6 +941,43 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 .mn-orn{display:block;width:100%;max-width:260px;height:auto;margin:0 auto}
 .mn-fete-t{margin:4px 0 14px;font-family:'Bodoni Moda',serif;font-size:21px;font-weight:500;letter-spacing:.02em;color:#E8CDA8}
 .mn-fete-t span{margin:0 10px;font-size:12px;color:#D2A982}
+#maisons{scroll-margin-top:70px}
+.coll-more{display:flex;flex-direction:column;align-items:center;gap:10px;margin:36px 0 6px}
+.coll-mb{min-height:52px;padding:15px 38px;background:#4A3426;color:#F1ECE4;border:0;font-family:inherit;font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;cursor:pointer}
+.coll-mb:hover{background:#3B2A1F}
+.coll-ml{margin:0;font-size:13px;color:#6B635A}
+.coll-hs{margin:26px 0 0;text-align:center}
+.sel{position:relative;padding:8vh 5vw 1vh}
+.sel-b{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:28px;max-width:1280px;margin:0 auto 70px;align-items:stretch}
+.sel-b.rev{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.sel-b.rev .sel-img{order:2}
+.sel-img{position:relative;overflow:hidden;border-radius:18px;min-height:560px;background:#3B2A1F;color:#F7F3EC}
+.sel-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.sel-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(32,22,16,0) 12%,rgba(32,22,16,.58) 46%,rgba(32,22,16,.9) 100%);pointer-events:none}
+.sel-cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:30px 30px 32px}
+.sel-over{margin:0;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#E8CDA8}
+.sel-cap{text-shadow:0 1px 16px rgba(20,12,7,.55)}
+.sel-cta{text-shadow:none}
+.sel-h{margin:8px 0 10px;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(32px,4.4vw,48px);line-height:1.04;letter-spacing:-.01em;color:#F7F3EC}
+.sel-sub{margin:0 0 20px;max-width:36ch;font-size:15px;line-height:1.5;color:#EDE3D5}
+.sel-cta{min-height:46px;padding:13px 24px;background:#F1ECE4;color:#3B2A1F;border:0;font-family:inherit;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
+.sel-cta:hover{background:#fff}
+.sel-main{min-width:0;display:flex;flex-direction:column;justify-content:center}
+.sel-nav{display:flex;align-items:center;justify-content:flex-end;gap:10px;margin-bottom:14px}
+.sel-n{margin-right:auto;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#6B635A}
+.sel-row{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 20px;scrollbar-width:none;overscroll-behavior-x:contain}
+.sel-row::-webkit-scrollbar{display:none}
+.sel-row .card{flex:0 0 min(72vw,272px);scroll-snap-align:start}
+.sel-row:focus-visible,.sel-cta:focus-visible,.coll-mb:focus-visible{outline:2px solid #8A5A3B;outline-offset:3px}
+@media (max-width:899px){
+.sel{padding-top:6vh}
+.sel-b,.sel-b.rev{grid-template-columns:minmax(0,1fr);gap:14px;margin-bottom:46px}
+.sel-b.rev .sel-img{order:0}
+.sel-img{min-height:340px}
+.sel-cap{padding:22px 20px 24px}
+.sel-nav{margin-bottom:0}.sel-nav .hx-arr{display:none}.sel-n{margin:0}
+.sel-row{margin:0 -5vw;padding:10px 5vw 18px;scroll-padding-left:5vw}
+}
 </style>
 </helmet>
 <div style="background:#F1ECE4;color:#2A2622;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:400;line-height:1.6">
@@ -1103,6 +1140,39 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <sc-for list="{{ eng }}" as="e" hint-placeholder-count="4"><span>{{ e.txt }}</span></sc-for>
 </section>
 
+<section class="sel" id="selections" aria-label="{{ selAria }}">
+<sc-for list="{{ selBlocks }}" as="bk" hint-placeholder-count="3">
+<div class="sel-b {{ bk.cls }}">
+<div class="sel-img"><img src="{{ bk.img }}" alt="" loading="lazy" decoding="async"><div class="sel-cap"><p class="sel-over">{{ bk.over }}</p><h2 class="sel-h">{{ bk.title }}</h2><p class="sel-sub">{{ bk.sub }}</p><button type="button" class="sel-cta" onClick="{{ bk.see }}">{{ bk.seeTxt }}</button></div></div>
+<div class="sel-main">
+<div class="sel-nav"><span class="sel-n">{{ bk.countTxt }}</span><button type="button" class="hx-arr" onClick="{{ bk.prev }}" aria-label="{{ t.prev }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></button><button type="button" class="hx-arr" onClick="{{ bk.next }}" aria-label="{{ t.next }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg></button></div>
+<div class="sel-row" role="group" tabindex="0" aria-label="{{ bk.title }}">
+<sc-for list="{{ bk.cards }}" as="p" hint-placeholder-count="4">
+<article class="card">
+<span class="ph">
+<sc-if value="{{ p.hasImg }}" hint-placeholder-val="{{ true }}"><button type="button" class="ph-b" onClick="{{ p.open }}" aria-label="{{ p.nom }}"><img class="pimg" src="{{ p.img }}" alt="{{ p.nom }}, {{ p.maison }}"></button></sc-if>
+<sc-if value="{{ p.noImg }}" hint-placeholder-val="{{ false }}"><i class="bt"></i></sc-if>
+<span class="badge">{{ p.badge }}</span>
+<button type="button" class="wh {{ p.wcls }}" onClick="{{ p.wtog }}" aria-pressed="{{ p.wpr }}" aria-label="{{ p.wlab }}"><span><svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.3 4.4 12.9a4.7 4.7 0 0 1 6.6-6.7l1 1 1-1a4.7 4.7 0 0 1 6.6 6.7z"></path></svg></span></button>
+</span>
+<div class="body">
+<a href="#collection" class="mais" onClick="{{ p.pickBrand }}">{{ p.maison }}</a>
+<button type="button" class="nom" onClick="{{ p.open }}">{{ p.nom }}</button>
+<div class="prix"><span class="pfrom">{{ p.fromTxt }}</span><b>{{ p.prix }}</b></div>
+<div class="fmts">
+<sc-if value="{{ p.f1.show }}" hint-placeholder-val="{{ true }}"><button type="button" class="fm {{ p.f1.cls }}" onClick="{{ p.f1.pick }}">{{ p.f1.label }}</button></sc-if>
+<sc-if value="{{ p.f2.show }}" hint-placeholder-val="{{ false }}"><button type="button" class="fm {{ p.f2.cls }}" onClick="{{ p.f2.pick }}">{{ p.f2.label }}</button></sc-if>
+<sc-if value="{{ p.f3.show }}" hint-placeholder-val="{{ false }}"><button type="button" class="fm {{ p.f3.cls }}" onClick="{{ p.f3.pick }}">{{ p.f3.label }}</button></sc-if>
+</div>
+<button type="button" class="btn" onClick="{{ p.add }}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F1ECE4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8zM9 8V6a3 3 0 0 1 6 0v2"></path></svg>{{ t.add }}</button>
+</div>
+</article>
+</sc-for>
+</div>
+</div>
+</div>
+</sc-for>
+</section>
 <section id="collection" style="position:relative;padding:9vh 5vw 8vh">
 <div class="gl lt" aria-hidden="true"></div>
 <h2 id="collTitle" style="scroll-margin-top:76px;margin:0;text-align:center;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:600;letter-spacing:-.025em;font-size:clamp(28px,5.4vw,40px);color:#4A3426">{{ t.collTitle }}</h2>
@@ -1143,7 +1213,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <p style="text-align:center;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:500;font-size:22px;color:#2A2622;margin:40px 0">{{ t.noResult }}</p>
 </sc-if>
 <div class="grid">
-<sc-for list="{{ results }}" as="p" hint-placeholder-count="4">
+<sc-for list="{{ collShown }}" as="p" hint-placeholder-count="4">
 <article class="card">
 <span class="ph">
 <sc-if value="{{ p.hasImg }}" hint-placeholder-val="{{ true }}"><button type="button" class="ph-b" onClick="{{ p.open }}" aria-label="{{ p.nom }}"><img class="pimg" src="{{ p.img }}" alt="{{ p.nom }}, {{ p.maison }}"></button></sc-if>
@@ -1165,6 +1235,10 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 </article>
 </sc-for>
 </div>
+<sc-if value="{{ collMoreShow }}" hint-placeholder-val="{{ true }}">
+<div class="coll-more"><button type="button" class="coll-mb" onClick="{{ collMore }}">{{ collMoreTxt }}</button><p class="coll-ml">{{ collLeftTxt }}</p></div>
+</sc-if>
+<p class="coll-by coll-hs"><button type="button" class="hx-all" onClick="{{ collHouses }}">{{ collHousesTxt }}</button></p>
 </section>
 
 <section id="contact" style="position:relative;overflow:hidden;padding:8vh 6vw 10vh;text-align:center;background:#4A3426;color:#F1ECE4">
@@ -3408,6 +3482,39 @@ class Component extends DCLogic {
       else if (anyFilter) countLabel = activeBits.join(' · ') + ' · ' + refs;
       else countLabel = n + ' ' + L('références sélectionnées', 'hand-picked products');
     }
+    // Collection raccourcie : 8 parfums (téléphone) ou 12 (ordinateur), puis « Voir plus » ; on repart de zéro quand les filtres changent
+    const vw = (typeof window !== 'undefined' && window.innerWidth) || 390;
+    const pageSz = vw >= 900 ? 12 : vw < 360 ? 4 : 8;
+    const sigC = JSON.stringify([fams, notesSel, fmtSel, bud, brand, q, this.state.sort]);
+    if (this._cSig !== sigC) { this._cSig = sigC; this._cExtra = 0; }
+    const collShown = results.slice(0, pageSz + (this._cExtra || 0));
+    const collLeft = results.length - collShown.length;
+    const collLeftTxt = collLeft > 0 ? L(collShown.length + ' parfums affichés sur ' + results.length, collShown.length + ' of ' + results.length + ' perfumes shown') : '';
+
+    // Blocs « sélection » : grande image + carrousel (familles olfactives réelles du catalogue)
+    const SELS = [
+      { k: 'gourmand', fams: ['gourmand', 'vanille'], img: './assets/8297e6eca4cb90c3c9263dbee1a6b9f0.jpg', pos: '50% 55%',
+        over: L('Douceur & réconfort', 'Sweet & comforting'), title: L('Gourmands & vanillés', 'Gourmand & vanilla'),
+        sub: L('Vanille, fruits, notes sucrées : des parfums enveloppants.', 'Vanilla, fruit, sweet notes: enveloping perfumes.') },
+      { k: 'boise', fams: ['boise', 'ambre'], img: './assets/56f65b27718b8d8ec0841de541be05b5.jpg', pos: '50% 50%',
+        over: L('Chaleur & profondeur', 'Warmth & depth'), title: L('Boisés & ambrés', 'Woody & amber'),
+        sub: L('Bois, ambre, épices : des sillages chauds et profonds.', 'Wood, amber, spice: warm, deep trails.') },
+      { k: 'floral', fams: ['floral', 'musque'], img: './assets/1f7f1a510645c699d3ad0a0db385a688.jpg', pos: '50% 60%',
+        over: L('Élégance & douceur', 'Elegance & softness'), title: L('Floraux & musqués', 'Floral & musky'),
+        sub: L('Rose, jasmin, muscs : des parfums doux et raffinés.', 'Rose, jasmine, musks: soft, refined perfumes.') }
+    ];
+    const selBlocks = SELS.map((d, i) => {
+      const all = base.filter(p => p.fams.some(k => d.fams.includes(k)));
+      return {
+        cls: i % 2 ? 'rev' : '', img: d.img, over: d.over, title: d.title, sub: d.sub,
+        cards: this.mixHouses(all).slice(0, 8),
+        countTxt: all.length + ' ' + plural(all.length, 'parfum', 'parfums', 'perfume', 'perfumes'),
+        seeTxt: L('Voir les ' + all.length + ' parfums', 'See all ' + all.length + ' perfumes'),
+        see: () => this.goTo('collection', { fams: d.fams.slice(), notesSel: [], fmtSel: [], bud: '', brand: '', q: '', open: false, detail: '', qOpen: false, qStep: 0, qA: {}, hOpen: '', hAll: false }),
+        prev: (e) => this.scrollBox(e, -1, '.sel-b', '.sel-row'), next: (e) => this.scrollBox(e, 1, '.sel-b', '.sel-row')
+      };
+    });
+
     const barSet = [L("Livraison offerte dès 150 € d'achat en France métropolitaine", 'Free delivery on orders over €150 in mainland France'), L('Remise en main propre possible', 'Hand delivery available'), L('Échantillons offerts', 'Free samples'), L('Idées cadeaux de Noël', 'Christmas gift ideas'), L('Paiement sécurisé', 'Secure payment'), L('Parfums de niche', 'Niche perfumes')];
     const engSet = [L('Sélection de niche', 'Niche selection'), L('Livraison offerte dès 150 € en France métropolitaine', 'Free delivery from €150 in mainland France'), L('Paiement sécurisé', 'Secure payment'), L('Conseil personnalisé', 'Personal advice')];
 
@@ -3455,6 +3562,10 @@ class Component extends DCLogic {
       noSugLabel: L('Aucune suggestion pour « ' + raw + ' »', 'No suggestion for “' + raw + '”'),
       row1: rowOf(0, qN), row2: rowOf(qN, 2 * qN), row3: rowOf(2 * qN, 3 * qN), row4: rowOf(3 * qN, nW),
       results, noResult: n === 0, countLabel,
+      collShown, collMoreShow: collLeft > 0, collLeftTxt, collMoreTxt: L('Voir plus de parfums', 'Show more perfumes'),
+      collMore: () => { this._cExtra = (this._cExtra || 0) + pageSz; this.setState({ cTick: (this.state.cTick || 0) + 1 }); },
+      collHouses: () => this.jumpTo('maisons', {}), collHousesTxt: L('Découvrir nos ' + houseNames.length + ' maisons', 'Discover our ' + houseNames.length + ' houses'),
+      selBlocks, selAria: L('Sélections par univers olfactif', 'Selections by fragrance family'),
       canReset: !!(q || anyFilter || brand),
       resetAll: () => this.setState({ q: '', fams: [], notesSel: [], fmtSel: [], bud: '', brand: '', open: false })
     };
