@@ -3,7 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Olfactive Stories · Parfums de niche</title>
+<title>Olfactive Stories · Parfums de niche, livraison en France</title>
+<meta name="description" content="Parfums de niche de maisons indépendantes : Parfums de Marly, Kilian Paris, Xerjoff, Nishane, Memo Paris… Conseils personnalisés sur WhatsApp, livraison offerte dès 150 €.">
+<link rel="canonical" href="https://olfactistories.netlify.app/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Olfactive Stories">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Olfactive Stories · Parfums de niche, livraison en France">
+<meta property="og:description" content="Parfums de niche de maisons indépendantes : Parfums de Marly, Kilian Paris, Xerjoff, Nishane, Memo Paris… Conseils personnalisés sur WhatsApp, livraison offerte dès 150 €.">
+<meta property="og:url" content="https://olfactistories.netlify.app/">
+<meta property="og:image" content="https://olfactistories.netlify.app/og/home.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Olfactive Stories, parfums de niche">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Olfactive Stories · Parfums de niche, livraison en France">
+<meta name="twitter:description" content="Parfums de niche de maisons indépendantes : Parfums de Marly, Kilian Paris, Xerjoff, Nishane, Memo Paris… Conseils personnalisés sur WhatsApp, livraison offerte dès 150 €.">
+<meta name="twitter:image" content="https://olfactistories.netlify.app/og/home.jpg">
+<meta name="theme-color" content="#4A3426">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Olfactive Stories","url":"https://olfactistories.netlify.app/","logo":"https://olfactistories.netlify.app/icon-512.png"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Olfactive Stories","url":"https://olfactistories.netlify.app/","inLanguage":"fr"}</script>
+<style>.seo-all{background:#F1ECE4;border-top:1px solid #E5DCCD;padding:30px 5vw 40px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:#6B635A}.seo-all h2{margin:0 0 14px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:#4A3426}.seo-all p{margin:0 0 8px;font-size:12.5px;line-height:1.75}.seo-all strong{color:#4A3426;font-weight:600;margin-right:6px}.seo-all a{color:#6B635A;text-decoration:underline;text-decoration-color:rgba(107,99,90,.35);text-underline-offset:2px}</style>
 <script src="./vendor/react.js"></script>
 <script src="./vendor/react-dom.js"></script>
 <script src="./support.js"></script>
@@ -13,7 +37,7 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;1,6..96,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Poppins:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;1,6..96,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;family=Poppins:wght@400&amp;display=swap" rel="stylesheet">
 <style>
 body{margin:0}
 a{color:inherit;text-decoration:none}
@@ -1069,7 +1093,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <sc-if value="{{ hasSug }}" hint-placeholder-val="{{ false }}">
 <div class="sug">
 <sc-for list="{{ sugs }}" as="s" hint-placeholder-count="3">
-<button type="button" class="si" onClick="{{ s.pick }}"><img class="sth" src="{{ s.img }}" alt=""><span class="sx"><span class="sn">{{ s.nom }}</span><span class="ss">{{ s.sub }}</span></span><span class="sp"><sc-if value="{{ s.hasFrom }}" hint-placeholder-val="{{ false }}"><i class="spf">{{ t.from }}</i></sc-if><b>{{ s.prix }}</b></span></button>
+<button type="button" class="si" onClick="{{ s.pick }}"><img class="sth" data-dc-src="{{ s.img }}" alt=""><span class="sx"><span class="sn">{{ s.nom }}</span><span class="ss">{{ s.sub }}</span></span><span class="sp"><sc-if value="{{ s.hasFrom }}" hint-placeholder-val="{{ false }}"><i class="spf">{{ t.from }}</i></sc-if><b>{{ s.prix }}</b></span></button>
 </sc-for>
 </div>
 </sc-if>
@@ -1086,7 +1110,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <div class="hr">
 <div class="lang" role="group" aria-label="Langue / Language"><button type="button" class="lgb {{ frCls }}" onClick="{{ setFr }}" aria-pressed="{{ frOn }}">FR</button><span aria-hidden="true">/</span><button type="button" class="lgb {{ enCls }}" onClick="{{ setEn }}" aria-pressed="{{ enOn }}">EN</button></div>
 <button type="button" class="ib wlb" onClick="{{ openWish }}" aria-label="{{ hdr.wishAria }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A3426" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.3 4.4 12.9a4.7 4.7 0 0 1 6.6-6.7l1 1 1-1a4.7 4.7 0 0 1 6.6 6.7z"></path></svg><sc-if value="{{ hdr.hasWish }}" hint-placeholder-val="{{ false }}"><span class="cbd">{{ hdr.wishN }}</span></sc-if></button>
-<button type="button" class="ib accb" onClick="{{ openAccount }}" aria-label="{{ hdr.accAria }}"><sc-if value="{{ hdr.loggedOut }}" hint-placeholder-val="{{ true }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A3426" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.6"></circle><path d="M4.6 20c.8-4 3.7-6 7.4-6s6.6 2 7.4 6"></path></svg></sc-if><sc-if value="{{ hdr.loggedIn }}" hint-placeholder-val="{{ false }}"><span class="av av-s {{ hdr.avCls }}"><img src="{{ hdr.avImg }}" alt=""></span></sc-if></button>
+<button type="button" class="ib accb" onClick="{{ openAccount }}" aria-label="{{ hdr.accAria }}"><sc-if value="{{ hdr.loggedOut }}" hint-placeholder-val="{{ true }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A3426" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.6"></circle><path d="M4.6 20c.8-4 3.7-6 7.4-6s6.6 2 7.4 6"></path></svg></sc-if><sc-if value="{{ hdr.loggedIn }}" hint-placeholder-val="{{ false }}"><span class="av av-s {{ hdr.avCls }}"><img data-dc-src="{{ hdr.avImg }}" alt=""></span></sc-if></button>
 <button type="button" class="ib cartb" onClick="{{ openCart }}" aria-label="{{ cartAria }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A3426" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8zM9 8V6a3 3 0 0 1 6 0v2"></path></svg><sc-if value="{{ hasCart }}" hint-placeholder-val="{{ false }}"><span class="cbd">{{ cartCount }}</span></sc-if></button>
 </div>
 </header>
@@ -1099,7 +1123,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <sc-if value="{{ hasSug }}" hint-placeholder-val="{{ false }}">
 <div class="sug">
 <sc-for list="{{ sugs }}" as="s" hint-placeholder-count="3">
-<button type="button" class="si" onClick="{{ s.pick }}"><img class="sth" src="{{ s.img }}" alt=""><span class="sx"><span class="sn">{{ s.nom }}</span><span class="ss">{{ s.sub }}</span></span><span class="sp"><sc-if value="{{ s.hasFrom }}" hint-placeholder-val="{{ false }}"><i class="spf">{{ t.from }}</i></sc-if><b>{{ s.prix }}</b></span></button>
+<button type="button" class="si" onClick="{{ s.pick }}"><img class="sth" data-dc-src="{{ s.img }}" alt=""><span class="sx"><span class="sn">{{ s.nom }}</span><span class="ss">{{ s.sub }}</span></span><span class="sp"><sc-if value="{{ s.hasFrom }}" hint-placeholder-val="{{ false }}"><i class="spf">{{ t.from }}</i></sc-if><b>{{ s.prix }}</b></span></button>
 </sc-for>
 </div>
 </sc-if>
@@ -1114,22 +1138,22 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <div class="wl-rows">
 <div class="row r1"><div class="trk">
 <sc-for list="{{ row1 }}" as="m" hint-placeholder-count="8">
-<button type="button" class="tile" aria-hidden="{{ m.aria }}" tabindex="{{ m.tab }}" onClick="{{ m.open }}"><img src="{{ m.img }}" alt="{{ m.nom }}, {{ m.maison }}"></button>
+<button type="button" class="tile" aria-hidden="{{ m.aria }}" tabindex="{{ m.tab }}" onClick="{{ m.open }}"><img data-dc-src="{{ m.img }}" alt="{{ m.alt }}"></button>
 </sc-for>
 </div></div>
 <div class="row r2 rev"><div class="trk">
 <sc-for list="{{ row2 }}" as="m" hint-placeholder-count="8">
-<button type="button" class="tile" aria-hidden="{{ m.aria }}" tabindex="{{ m.tab }}" onClick="{{ m.open }}"><img src="{{ m.img }}" alt="{{ m.nom }}, {{ m.maison }}"></button>
+<button type="button" class="tile" aria-hidden="{{ m.aria }}" tabindex="{{ m.tab }}" onClick="{{ m.open }}"><img data-dc-src="{{ m.img }}" alt="{{ m.alt }}"></button>
 </sc-for>
 </div></div>
 <div class="row r3"><div class="trk">
 <sc-for list="{{ row3 }}" as="m" hint-placeholder-count="8">
-<button type="button" class="tile" aria-hidden="{{ m.aria }}" tabindex="{{ m.tab }}" onClick="{{ m.open }}"><img src="{{ m.img }}" alt="{{ m.nom }}, {{ m.maison }}"></button>
+<button type="button" class="tile" aria-hidden="{{ m.aria }}" tabindex="{{ m.tab }}" onClick="{{ m.open }}"><img data-dc-src="{{ m.img }}" alt="{{ m.alt }}"></button>
 </sc-for>
 </div></div>
 <div class="row r4 rev"><div class="trk">
 <sc-for list="{{ row4 }}" as="m" hint-placeholder-count="8">
-<button type="button" class="tile" aria-hidden="{{ m.aria }}" tabindex="{{ m.tab }}" onClick="{{ m.open }}"><img src="{{ m.img }}" alt="{{ m.nom }}, {{ m.maison }}"></button>
+<button type="button" class="tile" aria-hidden="{{ m.aria }}" tabindex="{{ m.tab }}" onClick="{{ m.open }}"><img data-dc-src="{{ m.img }}" alt="{{ m.alt }}"></button>
 </sc-for>
 </div></div>
 </div>
@@ -1183,7 +1207,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <div class="mm-scroll">
 <sc-for list="{{ moment }}" as="x" hint-placeholder-count="4">
 <article class="mc">
-<button type="button" class="mc-img" onClick="{{ x.open }}" aria-label="{{ x.nom }}"><img src="{{ x.img }}" alt="{{ x.nom }}, {{ x.maison }}"></button>
+<button type="button" class="mc-img" onClick="{{ x.open }}" aria-label="{{ x.nom }}"><img data-dc-src="{{ x.img }}" alt="{{ x.alt }}"></button>
 <div class="mc-b">
 <a href="#collection" class="mais" style="color:#CDB9A3" onClick="{{ x.pickBrand }}">{{ x.maison }}</a>
 <button type="button" class="mc-name" onClick="{{ x.open }}">{{ x.nom }}</button>
@@ -1208,7 +1232,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <sc-for list="{{ gifts }}" as="g" hint-placeholder-count="3">
 <button type="button" class="gf-c" onClick="{{ g.pick }}"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#8A5A3B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="9" width="17" height="11.5" rx="1"></rect><path d="M2.5 9h19V6h-19zM12 6v14.5M12 6C10.5 3 6.5 3 6.5 5s3.5 1.5 5.5 1zM12 6c1.5-3 5.5-3 5.5-1s-3.5 1.5-5.5 1z"></path></svg><span class="gf-n">{{ g.name }}</span><span class="gf-r">{{ g.range }}</span><span class="gf-k">{{ g.count }}</span><span class="gf-go">{{ t.gfSee }}</span></button>
 </sc-for>
-<a href="{{ gfWa }}" class="gf-c gf-w"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#D2A982" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H10l-4.5 4v-4H4z"></path><path d="M8 9.5h8M8 12.5h5"></path></svg><span class="gf-n">{{ t.gfWaTitle }}</span><span class="gf-t">{{ t.gfWaTxt }}</span><span class="gf-go">{{ t.gfWaBtn }}</span></a>
+<a data-dc-href="{{ gfWa }}" class="gf-c gf-w"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#D2A982" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H10l-4.5 4v-4H4z"></path><path d="M8 9.5h8M8 12.5h5"></path></svg><span class="gf-n">{{ t.gfWaTitle }}</span><span class="gf-t">{{ t.gfWaTxt }}</span><span class="gf-go">{{ t.gfWaBtn }}</span></a>
 </div>
 <button type="button" class="gf-q" onClick="{{ openQuiz }}">{{ t.gfQuiz }}</button>
 </section>
@@ -1216,14 +1240,14 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <section class="sel" id="selections" aria-label="{{ selAria }}">
 <sc-for list="{{ selBlocks }}" as="bk" hint-placeholder-count="3">
 <div class="sel-b {{ bk.cls }}">
-<div class="sel-img"><img src="{{ bk.img }}" alt="" loading="lazy" decoding="async"><div class="sel-cap"><p class="sel-over">{{ bk.over }}</p><h2 class="sel-h">{{ bk.title }}</h2><p class="sel-sub">{{ bk.sub }}</p><button type="button" class="sel-cta" onClick="{{ bk.see }}">{{ bk.seeTxt }}</button></div></div>
+<div class="sel-img"><img data-dc-src="{{ bk.img }}" alt="" loading="lazy" decoding="async"><div class="sel-cap"><p class="sel-over">{{ bk.over }}</p><h2 class="sel-h">{{ bk.title }}</h2><p class="sel-sub">{{ bk.sub }}</p><button type="button" class="sel-cta" onClick="{{ bk.see }}">{{ bk.seeTxt }}</button></div></div>
 <div class="sel-main">
 <div class="sel-nav"><button type="button" class="hx-arr" onClick="{{ bk.prev }}" aria-label="{{ t.prev }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg></button><button type="button" class="hx-arr" onClick="{{ bk.next }}" aria-label="{{ t.next }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg></button></div>
 <div class="sel-row" role="group" tabindex="0" aria-label="{{ bk.title }}">
 <sc-for list="{{ bk.cards }}" as="p" hint-placeholder-count="4">
 <article class="card">
 <span class="ph">
-<sc-if value="{{ p.hasImg }}" hint-placeholder-val="{{ true }}"><button type="button" class="ph-b" onClick="{{ p.open }}" aria-label="{{ p.nom }}"><img class="pimg" src="{{ p.img }}" alt="{{ p.nom }}, {{ p.maison }}"></button></sc-if>
+<sc-if value="{{ p.hasImg }}" hint-placeholder-val="{{ true }}"><button type="button" class="ph-b" onClick="{{ p.open }}" aria-label="{{ p.nom }}"><img class="pimg" data-dc-src="{{ p.img }}" alt="{{ p.alt }}"></button></sc-if>
 <sc-if value="{{ p.noImg }}" hint-placeholder-val="{{ false }}"><i class="bt"></i></sc-if>
 <span class="badge">{{ p.badge }}</span>
 <button type="button" class="wh {{ p.wcls }}" onClick="{{ p.wtog }}" aria-pressed="{{ p.wpr }}" aria-label="{{ p.wlab }}"><span><svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.3 4.4 12.9a4.7 4.7 0 0 1 6.6-6.7l1 1 1-1a4.7 4.7 0 0 1 6.6 6.7z"></path></svg></span></button>
@@ -1291,7 +1315,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <sc-for list="{{ collShown }}" as="p" hint-placeholder-count="4">
 <article class="card">
 <span class="ph">
-<sc-if value="{{ p.hasImg }}" hint-placeholder-val="{{ true }}"><button type="button" class="ph-b" onClick="{{ p.open }}" aria-label="{{ p.nom }}"><img class="pimg" src="{{ p.img }}" alt="{{ p.nom }}, {{ p.maison }}"></button></sc-if>
+<sc-if value="{{ p.hasImg }}" hint-placeholder-val="{{ true }}"><button type="button" class="ph-b" onClick="{{ p.open }}" aria-label="{{ p.nom }}"><img class="pimg" data-dc-src="{{ p.img }}" alt="{{ p.alt }}"></button></sc-if>
 <sc-if value="{{ p.noImg }}" hint-placeholder-val="{{ false }}"><i class="bt"></i></sc-if>
 <span class="badge">{{ p.badge }}</span>
 <button type="button" class="wh {{ p.wcls }}" onClick="{{ p.wtog }}" aria-pressed="{{ p.wpr }}" aria-label="{{ p.wlab }}"><span><svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.3 4.4 12.9a4.7 4.7 0 0 1 6.6-6.7l1 1 1-1a4.7 4.7 0 0 1 6.6 6.7z"></path></svg></span></button>
@@ -1322,7 +1346,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <svg class="fir fl" viewBox="0 0 240 110" aria-hidden="true" focusable="false"><use href="#fir"></use></svg><svg class="fir fr" viewBox="0 0 240 110" aria-hidden="true" focusable="false"><use href="#fir"></use></svg>
 <h2 style="margin:0 0 14px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:600;letter-spacing:-.025em;font-size:clamp(26px,5.4vw,38px)">{{ t.contactTitle }}</h2>
 <p style="margin:0 auto 28px;max-width:480px;font-weight:400">{{ t.contactText }}</p>
-<a href="{{ waHref }}" class="cta" style="background:#F1ECE4;color:#4A3426">{{ t.contactBtn }}</a>
+<a data-dc-href="{{ waHref }}" class="cta" style="background:#F1ECE4;color:#4A3426">{{ t.contactBtn }}</a>
 </section>
 
 <section class="hx" id="maisons" aria-label="{{ t.hsTitle }}">
@@ -1334,7 +1358,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <div class="hx-scroll">
 <sc-for list="{{ houseFive }}" as="h" hint-placeholder-count="5">
 <article class="hx-c">
-<button type="button" class="hx-ph" onClick="{{ h.open }}" aria-label="{{ h.name }}"><img src="{{ h.img }}" alt="{{ h.name }}"></button>
+<button type="button" class="hx-ph" onClick="{{ h.open }}" aria-label="{{ h.name }}"><img data-dc-src="{{ h.img }}" alt="{{ h.name }}"></button>
 <h3 class="hx-n">{{ h.name }}</h3>
 <p class="hx-tg">{{ h.tag }}</p>
 <p class="hx-t">{{ h.teaser }}</p>
@@ -1352,7 +1376,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <div class="rvw-sum"><b class="rvw-avg">{{ rvw.avgTxt }}</b><span class="rvw-stars" role="img" aria-label="{{ rvw.avgAria }}"><sc-for list="{{ rvw.stars5 }}" as="s" hint-placeholder-count="5"><svg class="star {{ s.cls }}" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 2.6l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.5 6.1 20.6l1.2-6.5L2.5 9.5l6.6-.9z"></path></svg></sc-for></span><span class="rvw-cnt">{{ rvw.countTxt }}</span></div>
 <div class="rvw-list"><sc-for list="{{ rvw.cards }}" as="r" hint-placeholder-count="3">
 <article class="rvw-c">
-<div class="rvw-top"><span class="av av-m {{ r.avCls }}"><img src="{{ r.avImg }}" alt=""></span><div class="rvw-who"><b>{{ r.pseudo }}</b><sc-if value="{{ r.verified }}" hint-placeholder-val="{{ false }}"><span class="rvw-vf">{{ t.rvVerified }}</span></sc-if></div></div>
+<div class="rvw-top"><span class="av av-m {{ r.avCls }}"><img data-dc-src="{{ r.avImg }}" alt=""></span><div class="rvw-who"><b>{{ r.pseudo }}</b><sc-if value="{{ r.verified }}" hint-placeholder-val="{{ false }}"><span class="rvw-vf">{{ t.rvVerified }}</span></sc-if></div></div>
 <span class="rvw-stars" role="img" aria-label="{{ r.aria }}"><sc-for list="{{ r.stars5 }}" as="s" hint-placeholder-count="5"><svg class="star {{ s.cls }}" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 2.6l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.5 6.1 20.6l1.2-6.5L2.5 9.5l6.6-.9z"></path></svg></sc-for></span>
 <p class="rvw-t">{{ r.txt }}</p>
 <p class="rvw-m"><sc-if value="{{ r.hasParfum }}" hint-placeholder-val="{{ false }}"><span>{{ r.parfum }}</span></sc-if><sc-if value="{{ r.hasDate }}" hint-placeholder-val="{{ false }}"><span>{{ r.date }}</span></sc-if></p>
@@ -1377,7 +1401,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <footer class="ft">
 <div class="gl" aria-hidden="true"></div>
 <div class="ft-in">
-<div><p class="ft-logo">Olfactive Stories</p><p class="ft-tag">{{ t.ftTag }}</p><a href="{{ waHref }}" class="ft-wa">{{ t.ftWa }}</a></div>
+<div><p class="ft-logo">Olfactive Stories</p><p class="ft-tag">{{ t.ftTag }}</p><a data-dc-href="{{ waHref }}" class="ft-wa">{{ t.ftWa }}</a></div>
 <nav aria-label="{{ t.ftInfo }}"><p class="ft-h">{{ t.ftInfo }}</p><ul class="ft-ul"><sc-for list="{{ legalLinks }}" as="k" hint-placeholder-count="4"><li><button type="button" class="ft-l" onClick="{{ k.open }}">{{ k.label }}</button></li></sc-for></ul></nav>
 <div><p class="ft-h">{{ t.ftCk }}</p><p class="ft-cp">{{ t.ftCkTxt }}</p><button type="button" class="ft-l" onClick="{{ openCookies }}">{{ t.ftCkBtn }}</button></div>
 </div>
@@ -1398,7 +1422,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <sc-if value="{{ hasSug }}" hint-placeholder-val="{{ false }}">
 <div class="sug">
 <sc-for list="{{ sugs }}" as="s" hint-placeholder-count="3">
-<button type="button" class="si" onClick="{{ s.pick }}"><img class="sth" src="{{ s.img }}" alt=""><span class="sx"><span class="sn">{{ s.nom }}</span><span class="ss">{{ s.sub }}</span></span><span class="sp"><sc-if value="{{ s.hasFrom }}" hint-placeholder-val="{{ false }}"><i class="spf">{{ t.from }}</i></sc-if><b>{{ s.prix }}</b></span></button>
+<button type="button" class="si" onClick="{{ s.pick }}"><img class="sth" data-dc-src="{{ s.img }}" alt=""><span class="sx"><span class="sn">{{ s.nom }}</span><span class="ss">{{ s.sub }}</span></span><span class="sp"><sc-if value="{{ s.hasFrom }}" hint-placeholder-val="{{ false }}"><i class="spf">{{ t.from }}</i></sc-if><b>{{ s.prix }}</b></span></button>
 </sc-for>
 <button type="button" class="sall" onClick="{{ seeAll }}">{{ seeAllLabel }}</button>
 </div>
@@ -1412,7 +1436,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 
 <sc-if value="{{ qz.isIntro }}" hint-placeholder-val="{{ false }}">
 <div class="qz-intro">
-<div class="qz-fl"><sc-for list="{{ qz.floats }}" as="f" hint-placeholder-count="5"><img src="{{ f.ico }}" alt=""></sc-for></div>
+<div class="qz-fl"><sc-for list="{{ qz.floats }}" as="f" hint-placeholder-count="5"><img data-dc-src="{{ f.ico }}" alt=""></sc-for></div>
 <p class="qz-over">{{ t.qzOver }}</p>
 <h2 class="qz-title">{{ t.qzTitle1 }} <em>{{ t.qzTitle2 }}</em></h2>
 <p class="qz-sub">{{ t.qzSub }}</p>
@@ -1429,7 +1453,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <p class="qz-h">{{ qz.hint }}</p>
 <div class="qz-opts {{ qz.optsCls }}">
 <sc-for list="{{ qz.opts }}" as="o" hint-placeholder-count="4">
-<button type="button" class="qz-o {{ o.cls }}" aria-pressed="{{ o.pressed }}" onClick="{{ o.pick }}"><span class="qz-oi"><sc-if value="{{ o.hasIco }}" hint-placeholder-val="{{ true }}"><img src="{{ o.ico }}" alt=""></sc-if><sc-if value="{{ o.hasGlyph }}" hint-placeholder-val="{{ false }}"><b class="qz-gl">{{ o.glyph }}</b></sc-if></span><span class="qz-ot"><span class="qz-on">{{ o.label }}</span><span class="qz-os">{{ o.sub }}</span></span></button>
+<button type="button" class="qz-o {{ o.cls }}" aria-pressed="{{ o.pressed }}" onClick="{{ o.pick }}"><span class="qz-oi"><sc-if value="{{ o.hasIco }}" hint-placeholder-val="{{ true }}"><img data-dc-src="{{ o.ico }}" alt=""></sc-if><sc-if value="{{ o.hasGlyph }}" hint-placeholder-val="{{ false }}"><b class="qz-gl">{{ o.glyph }}</b></sc-if></span><span class="qz-ot"><span class="qz-on">{{ o.label }}</span><span class="qz-os">{{ o.sub }}</span></span></button>
 </sc-for>
 </div>
 <div class="qz-nav"><button type="button" class="qz-back" onClick="{{ qz.back }}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>{{ t.qzBack }}</button>
@@ -1439,7 +1463,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 
 <sc-if value="{{ qz.isLoad }}" hint-placeholder-val="{{ false }}">
 <div class="qz-load">
-<div class="qz-orb"><sc-for list="{{ qz.orb }}" as="f" hint-placeholder-count="3"><img src="{{ f.ico }}" alt=""></sc-for></div>
+<div class="qz-orb"><sc-for list="{{ qz.orb }}" as="f" hint-placeholder-count="3"><img data-dc-src="{{ f.ico }}" alt=""></sc-for></div>
 <div class="qz-lt" role="status"><span>{{ t.qzLoad1 }}</span><span>{{ t.qzLoad2 }}</span><span>{{ t.qzLoad3 }}</span></div>
 </div>
 </sc-if>
@@ -1455,7 +1479,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <sc-for list="{{ qz.recs }}" as="r" hint-placeholder-count="3">
 <article class="qr">
 <span class="qr-rk">{{ r.rankTxt }}</span>
-<button type="button" class="qr-img" onClick="{{ r.open }}" aria-label="{{ r.nom }}"><img src="{{ r.img }}" alt="{{ r.nom }}, {{ r.maison }}"></button>
+<button type="button" class="qr-img" onClick="{{ r.open }}" aria-label="{{ r.nom }}"><img data-dc-src="{{ r.img }}" alt="{{ r.alt }}"></button>
 <div class="qr-b">
 <p class="qr-lbl">{{ r.rankLbl }}</p>
 <span class="qr-m">{{ r.maison }}</span>
@@ -1475,7 +1499,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 </sc-for>
 </div>
 <div class="qz-end">
-<a href="{{ qz.wa }}" class="cta" style="background:#4A3426;color:#F1ECE4">{{ t.qzAsk }}</a>
+<a data-dc-href="{{ qz.wa }}" class="cta" style="background:#4A3426;color:#F1ECE4">{{ t.qzAsk }}</a>
 <button type="button" class="qz-lnk" onClick="{{ qz.again }}">{{ t.qzAgain }}</button>
 <button type="button" class="qz-lnk" onClick="{{ qz.all }}">{{ t.qzAll }}</button>
 </div>
@@ -1499,7 +1523,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <sc-if value="{{ hasSug }}" hint-placeholder-val="{{ false }}">
 <div class="sug">
 <sc-for list="{{ sugs }}" as="s" hint-placeholder-count="3">
-<button type="button" class="si" onClick="{{ s.pick }}"><img class="sth" src="{{ s.img }}" alt=""><span class="sx"><span class="sn">{{ s.nom }}</span><span class="ss">{{ s.sub }}</span></span><span class="sp"><sc-if value="{{ s.hasFrom }}" hint-placeholder-val="{{ false }}"><i class="spf">{{ t.from }}</i></sc-if><b>{{ s.prix }}</b></span></button>
+<button type="button" class="si" onClick="{{ s.pick }}"><img class="sth" data-dc-src="{{ s.img }}" alt=""><span class="sx"><span class="sn">{{ s.nom }}</span><span class="ss">{{ s.sub }}</span></span><span class="sp"><sc-if value="{{ s.hasFrom }}" hint-placeholder-val="{{ false }}"><i class="spf">{{ t.from }}</i></sc-if><b>{{ s.prix }}</b></span></button>
 </sc-for>
 <button type="button" class="sall" onClick="{{ seeAll }}">{{ seeAllLabel }}</button>
 </div>
@@ -1513,13 +1537,13 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <div class="hs-in">
 <header class="hs-head">
 <p class="hs-over">{{ hs.tag }}</p>
-<h1 class="hs-title">{{ hs.name }}</h1>
+<h2 class="hs-title">{{ hs.name }}</h2>
 </header>
 <div class="hs-grid">
 <sc-for list="{{ hs.cards }}" as="p" hint-placeholder-count="3">
 <article class="card">
 <span class="ph">
-<button type="button" class="ph-b" onClick="{{ p.open }}" aria-label="{{ p.nom }}"><img class="pimg" src="{{ p.img }}" alt="{{ p.nom }}, {{ p.maison }}"></button>
+<button type="button" class="ph-b" onClick="{{ p.open }}" aria-label="{{ p.nom }}"><img class="pimg" data-dc-src="{{ p.img }}" alt="{{ p.alt }}"></button>
 <span class="badge">{{ p.badge }}</span>
 <button type="button" class="wh {{ p.wcls }}" onClick="{{ p.wtog }}" aria-pressed="{{ p.wpr }}" aria-label="{{ p.wlab }}"><span><svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.3 4.4 12.9a4.7 4.7 0 0 1 6.6-6.7l1 1 1-1a4.7 4.7 0 0 1 6.6 6.7z"></path></svg></span></button>
 </span>
@@ -1539,7 +1563,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 </sc-for>
 </div>
 <section class="hs-story">
-<div class="hs-art"><img src="{{ hs.img }}" alt="{{ hs.name }}"></div>
+<div class="hs-art"><img data-dc-src="{{ hs.img }}" alt="{{ hs.name }}"></div>
 <div class="hs-txt">
 <p class="hs-over">{{ t.hStory }}</p>
 <h2>{{ hs.name }}</h2>
@@ -1570,7 +1594,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <sc-if value="{{ hasSug }}" hint-placeholder-val="{{ false }}">
 <div class="sug">
 <sc-for list="{{ sugs }}" as="s" hint-placeholder-count="3">
-<button type="button" class="si" onClick="{{ s.pick }}"><img class="sth" src="{{ s.img }}" alt=""><span class="sx"><span class="sn">{{ s.nom }}</span><span class="ss">{{ s.sub }}</span></span><span class="sp"><sc-if value="{{ s.hasFrom }}" hint-placeholder-val="{{ false }}"><i class="spf">{{ t.from }}</i></sc-if><b>{{ s.prix }}</b></span></button>
+<button type="button" class="si" onClick="{{ s.pick }}"><img class="sth" data-dc-src="{{ s.img }}" alt=""><span class="sx"><span class="sn">{{ s.nom }}</span><span class="ss">{{ s.sub }}</span></span><span class="sp"><sc-if value="{{ s.hasFrom }}" hint-placeholder-val="{{ false }}"><i class="spf">{{ t.from }}</i></sc-if><b>{{ s.prix }}</b></span></button>
 </sc-for>
 <button type="button" class="sall" onClick="{{ seeAll }}">{{ seeAllLabel }}</button>
 </div>
@@ -1584,13 +1608,13 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <div class="hs-in">
 <header class="hs-head">
 <p class="hs-over">{{ t.hAllOver }}</p>
-<h1 class="hs-title">{{ t.hAllTitle }}</h1>
+<h2 class="hs-title">{{ t.hAllTitle }}</h2>
 <p class="hs-count">{{ houseCountTxt }}</p>
 </header>
 <div class="ha-grid">
 <sc-for list="{{ hAllList }}" as="x" hint-placeholder-count="6">
 <sc-if value="{{ x.isHead }}" hint-placeholder-val="{{ false }}"><h3 class="ha-l">{{ x.letter }}</h3></sc-if>
-<sc-if value="{{ x.isItem }}" hint-placeholder-val="{{ true }}"><button type="button" class="ha-c" onClick="{{ x.open }}"><span class="ha-ph"><img src="{{ x.img }}" alt="" decoding="async"></span><span class="ha-n">{{ x.name }}</span><span class="ha-k">{{ x.tag }}</span></button></sc-if>
+<sc-if value="{{ x.isItem }}" hint-placeholder-val="{{ true }}"><button type="button" class="ha-c" onClick="{{ x.open }}"><span class="ha-ph"><img data-dc-src="{{ x.img }}" alt="" decoding="async"></span><span class="ha-n">{{ x.name }}</span><span class="ha-k">{{ x.tag }}</span></button></sc-if>
 </sc-for>
 </div>
 </div>
@@ -1611,7 +1635,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <sc-if value="{{ hasSug }}" hint-placeholder-val="{{ false }}">
 <div class="sug">
 <sc-for list="{{ sugs }}" as="s" hint-placeholder-count="3">
-<button type="button" class="si" onClick="{{ s.pick }}"><img class="sth" src="{{ s.img }}" alt=""><span class="sx"><span class="sn">{{ s.nom }}</span><span class="ss">{{ s.sub }}</span></span><span class="sp"><sc-if value="{{ s.hasFrom }}" hint-placeholder-val="{{ false }}"><i class="spf">{{ t.from }}</i></sc-if><b>{{ s.prix }}</b></span></button>
+<button type="button" class="si" onClick="{{ s.pick }}"><img class="sth" data-dc-src="{{ s.img }}" alt=""><span class="sx"><span class="sn">{{ s.nom }}</span><span class="ss">{{ s.sub }}</span></span><span class="sp"><sc-if value="{{ s.hasFrom }}" hint-placeholder-val="{{ false }}"><i class="spf">{{ t.from }}</i></sc-if><b>{{ s.prix }}</b></span></button>
 </sc-for>
 <button type="button" class="sall" onClick="{{ seeAll }}">{{ seeAllLabel }}</button>
 </div>
@@ -1624,7 +1648,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 
 <div class="gl lt gl-in" aria-hidden="true"></div>
 <div class="dt-in">
-<div class="dt-media"><div class="dt-img"><img src="{{ dt.img }}" alt="{{ dt.nom }}, {{ dt.maison }}"></div></div>
+<div class="dt-media"><div class="dt-img"><img data-dc-src="{{ dt.img }}" alt="{{ dt.alt }}"></div></div>
 <div>
 <a href="#collection" class="dt-mais" onClick="{{ dt.openBrand }}">{{ dt.maison }}</a>
 <h2 class="dt-name">{{ dt.nom }}</h2>
@@ -1644,14 +1668,14 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 </div>
 <div class="dt-pw"><sc-if value="{{ dt.hasFrom }}" hint-placeholder-val="{{ false }}"><span class="pfrom">{{ t.from }}</span></sc-if><span class="dt-price">{{ dt.prix }}</span></div>
 </div>
-<sc-if value="{{ dt.hasPo }}" hint-placeholder-val="{{ false }}"><div class="dt-po"><p class="dt-po-l"><span>{{ dt.poTxtL }}</span><b>{{ dt.poPct }}</b></p><p class="dt-po-s"><span>{{ dt.poSrcTxt }}</span> <a href="{{ dt.poUrl }}" target="_blank" rel="noopener noreferrer">{{ dt.poLink }}</a></p></div></sc-if>
+<sc-if value="{{ dt.hasPo }}" hint-placeholder-val="{{ false }}"><div class="dt-po"><p class="dt-po-l"><span>{{ dt.poTxtL }}</span><b>{{ dt.poPct }}</b></p><p class="dt-po-s"><span>{{ dt.poSrcTxt }}</span> <a data-dc-href="{{ dt.poUrl }}" target="_blank" rel="noopener noreferrer">{{ dt.poLink }}</a></p></div></sc-if>
 <div class="dt-cta">
 <button type="button" class="cta" style="background:#4A3426;color:#F1ECE4;border:1px solid #4A3426;font-family:inherit;line-height:1.6" onClick="{{ dt.add }}">{{ t.add }}</button>
-<a href="{{ dt.wa }}" class="cta" style="border:1px solid #4A3426;color:#4A3426">{{ t.ask }}</a>
+<a data-dc-href="{{ dt.wa }}" class="cta" style="border:1px solid #4A3426;color:#4A3426">{{ t.ask }}</a>
 </div>
 <button type="button" class="dt-wish {{ dt.wcls }}" onClick="{{ dt.wtog }}" aria-pressed="{{ dt.wpr }}"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.3 4.4 12.9a4.7 4.7 0 0 1 6.6-6.7l1 1 1-1a4.7 4.7 0 0 1 6.6 6.7z"></path></svg>{{ dt.wtxt }}</button>
 <p class="dt-hand"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A5A3B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.6-6-10a6 6 0 1 1 12 0c0 4.4-6 10-6 10z"></path><circle cx="12" cy="11" r="2.2"></circle></svg><span>{{ dt.handTxt }}</span></p>
-<a href="{{ dt.share }}" class="dt-share"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.2-4.1A8.5 8.5 0 1 1 8 19.4z"></path><path d="M9 8.6c.3 2.4 2.7 4.9 5.9 5.6l1.2-1.4-2.1-1-.8.7c-.9-.4-1.8-1.3-2.2-2.2l.7-.8-1-2.1z"></path></svg>{{ t.share }}</a>
+<a data-dc-href="{{ dt.share }}" class="dt-share"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.2-4.1A8.5 8.5 0 1 1 8 19.4z"></path><path d="M9 8.6c.3 2.4 2.7 4.9 5.9 5.6l1.2-1.4-2.1-1-.8.7c-.9-.4-1.8-1.3-2.2-2.2l.7-.8-1-2.1z"></path></svg>{{ t.share }}</a>
 <div class="dt-ass"><sc-for list="{{ engD }}" as="e" hint-placeholder-count="4"><span>{{ e.txt }}</span></sc-for></div>
 </div>
 </div>
@@ -1662,26 +1686,26 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <h3 class="dt-h">{{ t.dNotes }}</h3>
 <sc-if value="{{ dt.hasPyr }}" hint-placeholder-val="{{ true }}">
 <div class="dt-pyr">
-<div class="dt-col"><h4>{{ t.nHead }}</h4><div class="nts"><sc-for list="{{ dt.head }}" as="n" hint-placeholder-count="3"><div class="nt"><img src="{{ n.ico }}" alt=""><span>{{ n.txt }}</span></div></sc-for></div></div>
-<div class="dt-col c2"><h4>{{ t.nHeart }}</h4><div class="nts"><sc-for list="{{ dt.heart }}" as="n" hint-placeholder-count="3"><div class="nt"><img src="{{ n.ico }}" alt=""><span>{{ n.txt }}</span></div></sc-for></div></div>
-<div class="dt-col c3"><h4>{{ t.nBase }}</h4><div class="nts"><sc-for list="{{ dt.base }}" as="n" hint-placeholder-count="3"><div class="nt"><img src="{{ n.ico }}" alt=""><span>{{ n.txt }}</span></div></sc-for></div></div>
+<div class="dt-col"><h4>{{ t.nHead }}</h4><div class="nts"><sc-for list="{{ dt.head }}" as="n" hint-placeholder-count="3"><div class="nt"><img data-dc-src="{{ n.ico }}" alt=""><span>{{ n.txt }}</span></div></sc-for></div></div>
+<div class="dt-col c2"><h4>{{ t.nHeart }}</h4><div class="nts"><sc-for list="{{ dt.heart }}" as="n" hint-placeholder-count="3"><div class="nt"><img data-dc-src="{{ n.ico }}" alt=""><span>{{ n.txt }}</span></div></sc-for></div></div>
+<div class="dt-col c3"><h4>{{ t.nBase }}</h4><div class="nts"><sc-for list="{{ dt.base }}" as="n" hint-placeholder-count="3"><div class="nt"><img data-dc-src="{{ n.ico }}" alt=""><span>{{ n.txt }}</span></div></sc-for></div></div>
 </div>
 </sc-if>
 <sc-if value="{{ dt.hasFlat }}" hint-placeholder-val="{{ false }}">
-<div class="nts" style="max-width:420px"><sc-for list="{{ dt.flat }}" as="n" hint-placeholder-count="3"><div class="nt"><img src="{{ n.ico }}" alt=""><span>{{ n.txt }}</span></div></sc-for></div>
+<div class="nts" style="max-width:420px"><sc-for list="{{ dt.flat }}" as="n" hint-placeholder-count="3"><div class="nt"><img data-dc-src="{{ n.ico }}" alt=""><span>{{ n.txt }}</span></div></sc-for></div>
 </sc-if>
 <p class="dt-src">{{ dt.src }}</p>
 </div>
 
 <div class="dt-sec">
 <h3 class="dt-h">{{ t.occ }}</h3>
-<div class="occ1"><span class="occ1-i"><img src="{{ dt.occ1.ico }}" alt=""></span><div class="occ1-t"><span class="occ1-k">{{ t.occKick }}</span><strong class="occ1-n">{{ dt.occ1.name }}</strong><p class="occ1-p">{{ dt.occ1.text }}</p></div></div>
+<div class="occ1"><span class="occ1-i"><img data-dc-src="{{ dt.occ1.ico }}" alt=""></span><div class="occ1-t"><span class="occ1-k">{{ t.occKick }}</span><strong class="occ1-n">{{ dt.occ1.name }}</strong><p class="occ1-p">{{ dt.occ1.text }}</p></div></div>
 <p class="dt-src">{{ t.occNote }}</p>
 </div>
 
 <div class="dt-sec">
 <h3 class="dt-h">{{ t.dFams }}</h3>
-<div class="dt-tags"><sc-for list="{{ dt.famTags }}" as="f" hint-placeholder-count="2"><span class="dt-tag"><img src="{{ f.ico }}" alt="">{{ f.txt }}</span></sc-for></div>
+<div class="dt-tags"><sc-for list="{{ dt.famTags }}" as="f" hint-placeholder-count="2"><span class="dt-tag"><img data-dc-src="{{ f.ico }}" alt="">{{ f.txt }}</span></sc-for></div>
 </div>
 </div>
 
@@ -1695,7 +1719,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 </div>
 <div class="dt-sim">
 <sc-for list="{{ dt.similar }}" as="s" hint-placeholder-count="4">
-<article class="sm"><button type="button" class="sm-o" onClick="{{ s.open }}"><span class="sm-ph"><img src="{{ s.img }}" alt="{{ s.nom }}"><span class="sm-tag">{{ s.tag }}</span></span><span class="sm-m">{{ s.maison }}</span><span class="sm-n">{{ s.nom }}</span><span class="sm-k">{{ s.notes }}</span></button><div class="sm-f"><div class="sm-pw"><span class="sm-pf">{{ s.fromTxt }}</span><b class="sm-p">{{ s.prix }}</b></div><button type="button" class="sm-add" onClick="{{ s.add }}" aria-label="{{ t.add }} · {{ s.nom }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8zM9 8V6a3 3 0 0 1 6 0v2M12 11.5v5M9.5 14h5"></path></svg></button></div></article>
+<article class="sm"><button type="button" class="sm-o" onClick="{{ s.open }}"><span class="sm-ph"><img data-dc-src="{{ s.img }}" alt="{{ s.alt }}"><span class="sm-tag">{{ s.tag }}</span></span><span class="sm-m">{{ s.maison }}</span><span class="sm-n">{{ s.nom }}</span><span class="sm-k">{{ s.notes }}</span></button><div class="sm-f"><div class="sm-pw"><span class="sm-pf">{{ s.fromTxt }}</span><b class="sm-p">{{ s.prix }}</b></div><button type="button" class="sm-add" onClick="{{ s.add }}" aria-label="{{ s.addAria }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8zM9 8V6a3 3 0 0 1 6 0v2M12 11.5v5M9.5 14h5"></path></svg></button></div></article>
 </sc-for>
 </div>
 </div></div>
@@ -1708,7 +1732,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <div class="hx-scroll">
 <sc-for list="{{ houseFive }}" as="h" hint-placeholder-count="5">
 <article class="hx-c">
-<button type="button" class="hx-ph" onClick="{{ h.open }}" aria-label="{{ h.name }}"><img src="{{ h.img }}" alt="{{ h.name }}"></button>
+<button type="button" class="hx-ph" onClick="{{ h.open }}" aria-label="{{ h.name }}"><img data-dc-src="{{ h.img }}" alt="{{ h.name }}"></button>
 <h3 class="hx-n">{{ h.name }}</h3>
 <p class="hx-tg">{{ h.tag }}</p>
 <p class="hx-t">{{ h.teaser }}</p>
@@ -1746,7 +1770,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <button type="button" class="mn-l mn-b" onClick="{{ goReviews }}">{{ t.mReviews }}</button>
 <button type="button" class="mn-l mn-b" onClick="{{ goContact }}">{{ t.mContact }}</button>
 <div class="mn-lang" role="group" aria-label="Langue / Language"><span>Langue / Language</span><button type="button" onClick="{{ setFr }}" aria-pressed="{{ frOn }}">FR</button><button type="button" onClick="{{ setEn }}" aria-pressed="{{ enOn }}">EN</button></div>
-<a href="{{ waHref }}" class="mn-wa">{{ t.mWa }}</a>
+<a data-dc-href="{{ waHref }}" class="mn-wa">{{ t.mWa }}</a>
 <div class="mn-fete">
 <svg class="mn-orn" viewBox="0 0 260 64" aria-hidden="true" focusable="false"><path d="M4 8Q130 34 256 8" fill="none" stroke="#8A6A4A" stroke-width="1.2"></path><g transform="translate(10 10)"><rect x="16" y="0" width="8" height="6" rx="1.6" fill="#D2A982"></rect><circle cx="20" cy="23" r="17" fill="url(#gR)"></circle><path d="M5 25q15 7 30 0" fill="none" stroke="#D2A982" stroke-width="1.6" opacity=".85"></path><ellipse cx="13" cy="16" rx="3.6" ry="6" fill="#fff" opacity=".32" transform="rotate(-28 13 16)"></ellipse></g><g transform="translate(60 16)"><rect x="16" y="0" width="8" height="6" rx="1.6" fill="#8F6538"></rect><circle cx="20" cy="23" r="17" fill="url(#gG)"></circle><path d="M5 25q15 7 30 0" fill="none" stroke="#D2A982" stroke-width="1.6" opacity=".85"></path><ellipse cx="13" cy="16" rx="3.6" ry="6" fill="#fff" opacity=".32" transform="rotate(-28 13 16)"></ellipse></g><g transform="translate(110 19)"><rect x="16" y="0" width="8" height="6" rx="1.6" fill="#D2A982"></rect><circle cx="20" cy="23" r="17" fill="url(#gR)"></circle><path d="M5 25q15 7 30 0" fill="none" stroke="#D2A982" stroke-width="1.6" opacity=".85"></path><ellipse cx="13" cy="16" rx="3.6" ry="6" fill="#fff" opacity=".32" transform="rotate(-28 13 16)"></ellipse></g><g transform="translate(160 16)"><rect x="16" y="0" width="8" height="6" rx="1.6" fill="#8F6538"></rect><circle cx="20" cy="23" r="17" fill="url(#gG)"></circle><path d="M5 25q15 7 30 0" fill="none" stroke="#D2A982" stroke-width="1.6" opacity=".85"></path><ellipse cx="13" cy="16" rx="3.6" ry="6" fill="#fff" opacity=".32" transform="rotate(-28 13 16)"></ellipse></g><g transform="translate(210 10)"><rect x="16" y="0" width="8" height="6" rx="1.6" fill="#D2A982"></rect><circle cx="20" cy="23" r="17" fill="url(#gR)"></circle><path d="M5 25q15 7 30 0" fill="none" stroke="#D2A982" stroke-width="1.6" opacity=".85"></path><ellipse cx="13" cy="16" rx="3.6" ry="6" fill="#fff" opacity=".32" transform="rotate(-28 13 16)"></ellipse></g></svg>
 <p class="mn-fete-t"><span aria-hidden="true">✦</span>{{ t.mFete }}<span aria-hidden="true">✦</span></p>
@@ -1769,9 +1793,9 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <sc-if value="{{ cart.has }}" hint-placeholder-val="{{ true }}">
 <div class="ct-ship {{ cart.shipCls }}"><p>{{ cart.shipTxt }}</p><progress class="ct-bar" max="100" value="{{ cart.pct }}"></progress></div>
 <div class="ct-list"><sc-for list="{{ cart.lines }}" as="l" hint-placeholder-count="2">
-<div class="ci {{ l.cls }}"><img src="{{ l.img }}" alt=""><div class="ci-b"><span class="ci-m">{{ l.maison }}</span><span class="ci-n">{{ l.nom }}</span><span class="ci-v">{{ l.vol }} · {{ l.unitTxt }}</span><div class="ci-q"><button type="button" onClick="{{ l.dec }}" aria-label="{{ t.qtyDown }}">−</button><b>{{ l.qty }}</b><button type="button" onClick="{{ l.inc }}" aria-label="{{ t.qtyUp }}">+</button></div></div><div class="ci-r"><b>{{ l.totTxt }}</b><button type="button" class="ci-x" onClick="{{ l.rm }}">{{ t.remove }}</button></div></div>
+<div class="ci {{ l.cls }}"><img data-dc-src="{{ l.img }}" alt=""><div class="ci-b"><span class="ci-m">{{ l.maison }}</span><span class="ci-n">{{ l.nom }}</span><span class="ci-v">{{ l.vol }} · {{ l.unitTxt }}</span><div class="ci-q"><button type="button" onClick="{{ l.dec }}" aria-label="{{ t.qtyDown }}">−</button><b>{{ l.qty }}</b><button type="button" onClick="{{ l.inc }}" aria-label="{{ t.qtyUp }}">+</button></div></div><div class="ci-r"><b>{{ l.totTxt }}</b><button type="button" class="ci-x" onClick="{{ l.rm }}">{{ t.remove }}</button></div></div>
 </sc-for><div class="ci ci-free"><span class="ci-ph"><svg viewBox="0 0 72 90" aria-hidden="true" focusable="false"><defs><linearGradient id="smBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4F5F9"></stop><stop offset="1" stop-color="#E1E3EA"></stop></linearGradient><linearGradient id="smA" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E2B97E"></stop><stop offset=".45" stop-color="#F7E6C6"></stop><stop offset="1" stop-color="#D3A765"></stop></linearGradient><linearGradient id="smB" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#C98A8A"></stop><stop offset=".45" stop-color="#F0D2D0"></stop><stop offset="1" stop-color="#B97272"></stop></linearGradient></defs><rect width="72" height="90" fill="url(#smBg)"></rect><ellipse cx="37" cy="79" rx="27" ry="4.2" fill="#2A1E16" opacity=".1"></ellipse><g transform="rotate(-9 26 72)"><rect x="17" y="40" width="17" height="34" rx="3.2" fill="url(#smA)" stroke="#B48A55" stroke-width=".7"></rect><rect x="20" y="31" width="11" height="9.5" rx="1.6" fill="#4A3426"></rect><rect x="22.5" y="26.5" width="6" height="5" rx="1" fill="#6B4A36"></rect><rect x="19.5" y="50" width="12" height="15" rx="1.4" fill="#FBF6EC" opacity=".92"></rect><text x="25.5" y="62" font-size="11" text-anchor="middle" fill="#8A5A3B" font-family="Georgia,serif" font-weight="700">?</text></g><g transform="rotate(7 48 72)"><rect x="39" y="36" width="17" height="38" rx="3.2" fill="url(#smB)" stroke="#A96868" stroke-width=".7"></rect><rect x="42" y="27" width="11" height="9.5" rx="1.6" fill="#4A3426"></rect><rect x="44.5" y="22.5" width="6" height="5" rx="1" fill="#6B4A36"></rect><rect x="41.5" y="47" width="12" height="15" rx="1.4" fill="#FBF6EC" opacity=".92"></rect><text x="47.5" y="59" font-size="11" text-anchor="middle" fill="#8A5A3B" font-family="Georgia,serif" font-weight="700">?</text></g><g transform="translate(36 13)"><path d="M0 4C-6-4-14-5-15 0c-1 5 7 8 15 4z" fill="#C79A66"></path><path d="M0 4C6-4 14-5 15 0c1 5-7 8-15 4z" fill="#D8B084"></path><path d="M-1 7L-6 16M1 7L6 16" stroke="#B88655" stroke-width="2.4" stroke-linecap="round"></path><rect x="-3.2" y="1" width="6.4" height="6.4" rx="2.2" fill="#B27B49"></rect></g></svg></span><div class="ci-b"><span class="ci-m">{{ t.sampTag }}</span><span class="ci-n">{{ t.sampName }}</span><span class="ci-v">{{ cart.sampTxt }}</span><span class="ci-rule">{{ cart.sampRule }}</span></div><div class="ci-r"><b class="ci-gr">{{ t.sampFree }}</b></div></div><div class="ct-hand"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A5A3B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.6-6-10a6 6 0 1 1 12 0c0 4.4-6 10-6 10z"></path><circle cx="12" cy="11" r="2.2"></circle></svg><span>{{ t.handCart }}</span></div></div>
-<div class="ct-foot"><div class="ct-sub"><span>{{ t.subtotal }}</span><b>{{ cart.subTxt }}</b></div><div class="ct-fee"><span>{{ t.ctFeeL }}</span><span><sc-if value="{{ cart.feeFree }}" hint-placeholder-val="{{ false }}"><s>{{ cart.feeOld }}</s><b>{{ t.ctFeeFree }}</b></sc-if><sc-if value="{{ cart.feeDue }}" hint-placeholder-val="{{ true }}"><b>{{ cart.feeOld }}</b></sc-if></span></div><p class="ct-fee-n">{{ t.ctFeeNote }}</p><sc-if value="{{ cart.who.isMe }}" hint-placeholder-val="{{ false }}"><div class="ct-who {{ cart.who.cls }}"><p class="cw-t">{{ cart.who.title }}</p><p>{{ cart.who.l1 }}</p><p class="cw-l2">{{ cart.who.l2 }}</p><button type="button" class="ac-link" onClick="{{ cart.who.edit }}">{{ cart.who.btn }}</button></div></sc-if><sc-if value="{{ cart.who.isGuest }}" hint-placeholder-val="{{ true }}"><div class="ct-who"><p class="cw-t">{{ cart.who.title }}</p><p class="cw-l2">{{ cart.who.l1 }}</p><div class="cw-b"><button type="button" class="ac-link" onClick="{{ cart.who.edit }}">{{ cart.who.btn }}</button><button type="button" class="ac-link" onClick="{{ cart.who.login }}">{{ cart.who.btn2 }}</button></div></div></sc-if><p class="ct-note">{{ t.cartNote }}</p><a href="{{ cart.wa }}" class="cta ct-order">{{ t.orderWa }}</a><button type="button" class="ct-more" onClick="{{ closeCart }}">{{ t.cartContinue }}</button></div>
+<div class="ct-foot"><div class="ct-sub"><span>{{ t.subtotal }}</span><b>{{ cart.subTxt }}</b></div><div class="ct-fee"><span>{{ t.ctFeeL }}</span><span><sc-if value="{{ cart.feeFree }}" hint-placeholder-val="{{ false }}"><s>{{ cart.feeOld }}</s><b>{{ t.ctFeeFree }}</b></sc-if><sc-if value="{{ cart.feeDue }}" hint-placeholder-val="{{ true }}"><b>{{ cart.feeOld }}</b></sc-if></span></div><p class="ct-fee-n">{{ t.ctFeeNote }}</p><sc-if value="{{ cart.who.isMe }}" hint-placeholder-val="{{ false }}"><div class="ct-who {{ cart.who.cls }}"><p class="cw-t">{{ cart.who.title }}</p><p>{{ cart.who.l1 }}</p><p class="cw-l2">{{ cart.who.l2 }}</p><button type="button" class="ac-link" onClick="{{ cart.who.edit }}">{{ cart.who.btn }}</button></div></sc-if><sc-if value="{{ cart.who.isGuest }}" hint-placeholder-val="{{ true }}"><div class="ct-who"><p class="cw-t">{{ cart.who.title }}</p><p class="cw-l2">{{ cart.who.l1 }}</p><div class="cw-b"><button type="button" class="ac-link" onClick="{{ cart.who.edit }}">{{ cart.who.btn }}</button><button type="button" class="ac-link" onClick="{{ cart.who.login }}">{{ cart.who.btn2 }}</button></div></div></sc-if><p class="ct-note">{{ t.cartNote }}</p><a data-dc-href="{{ cart.wa }}" class="cta ct-order">{{ t.orderWa }}</a><button type="button" class="ct-more" onClick="{{ closeCart }}">{{ t.cartContinue }}</button></div>
 </sc-if>
 </aside>
 </div>
@@ -1792,10 +1816,10 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <sc-if value="{{ acc.wishHas }}" hint-placeholder-val="{{ true }}">
 <ul class="wl">
 <sc-for list="{{ acc.wish }}" as="w" hint-placeholder-count="2">
-<li class="wl-i"><button type="button" class="wl-ph" onClick="{{ w.open }}" aria-label="{{ t.wView }} : {{ w.nom }}"><img src="{{ w.img }}" alt=""></button><div class="wl-b"><span class="ci-m">{{ w.maison }}</span><button type="button" class="wl-n" onClick="{{ w.open }}">{{ w.nom }}</button><span class="ci-v"><sc-if value="{{ w.hasFrom }}" hint-placeholder-val="{{ false }}"><i class="pfrom">{{ t.from }}</i> </sc-if>{{ w.prix }}</span><div class="wl-a"><button type="button" class="wl-add" onClick="{{ w.add }}">{{ t.add }}</button><button type="button" class="ci-x" onClick="{{ w.rm }}">{{ t.wRemove }}</button></div></div></li>
+<li class="wl-i"><button type="button" class="wl-ph" onClick="{{ w.open }}" aria-label="{{ w.viewAria }}"><img data-dc-src="{{ w.img }}" alt=""></button><div class="wl-b"><span class="ci-m">{{ w.maison }}</span><button type="button" class="wl-n" onClick="{{ w.open }}">{{ w.nom }}</button><span class="ci-v"><sc-if value="{{ w.hasFrom }}" hint-placeholder-val="{{ false }}"><i class="pfrom">{{ t.from }}</i> </sc-if>{{ w.prix }}</span><div class="wl-a"><button type="button" class="wl-add" onClick="{{ w.add }}">{{ t.add }}</button><button type="button" class="ci-x" onClick="{{ w.rm }}">{{ t.wRemove }}</button></div></div></li>
 </sc-for>
 </ul>
-<a href="{{ acc.wishShare }}" class="ac-share"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.2-4.1A8.5 8.5 0 1 1 8 19.4z"></path><path d="M9 8.6c.3 2.4 2.7 4.9 5.9 5.6l1.2-1.4-2.1-1-.8.7c-.9-.4-1.8-1.3-2.2-2.2l.7-.8-1-2.1z"></path></svg>{{ t.wShare }}</a>
+<a data-dc-href="{{ acc.wishShare }}" class="ac-share"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.2-4.1A8.5 8.5 0 1 1 8 19.4z"></path><path d="M9 8.6c.3 2.4 2.7 4.9 5.9 5.6l1.2-1.4-2.1-1-.8.7c-.9-.4-1.8-1.3-2.2-2.2l.7-.8-1-2.1z"></path></svg>{{ t.wShare }}</a>
 </sc-if>
 <sc-if value="{{ acc.guestNudge }}" hint-placeholder-val="{{ true }}">
 <div class="ac-nudge"><p class="ac-nt">{{ t.wGuestT }}</p><p class="ac-np">{{ t.wGuestP }}</p><div class="ac-nb"><button type="button" class="cta ac-cta" onClick="{{ acc.goSignup }}">{{ t.acCreate }}</button><button type="button" class="cta ac-cta2" onClick="{{ acc.goLogin }}">{{ t.acLogin }}</button></div></div>
@@ -1820,8 +1844,8 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <sc-if value="{{ acc.signupView }}" hint-placeholder-val="{{ false }}">
 <form class="ac-form" onSubmit="{{ acc.submitSignup }}">
 <p class="ac-intro">{{ t.acSignupIntro }}</p>
-<div class="ac-ph"><span class="av av-l {{ acc.avCls }}"><img src="{{ acc.avImg }}" alt=""></span><div class="ac-phb"><p class="ac-h3">{{ t.acAvatar }}</p><p class="ac-hint">{{ t.acAvatarNote }}</p></div></div>
-<div class="av-pick" role="group" aria-label="{{ t.acAvatar }}"><sc-for list="{{ acc.avOpts }}" as="o" hint-placeholder-count="12"><button type="button" class="av-o {{ o.cls }}" aria-pressed="{{ o.on }}" aria-label="{{ o.label }}" title="{{ o.label }}" onClick="{{ o.pick }}"><img src="{{ o.img }}" alt=""></button></sc-for></div>
+<div class="ac-ph"><span class="av av-l {{ acc.avCls }}"><img data-dc-src="{{ acc.avImg }}" alt=""></span><div class="ac-phb"><p class="ac-h3">{{ t.acAvatar }}</p><p class="ac-hint">{{ t.acAvatarNote }}</p></div></div>
+<div class="av-pick" role="group" aria-label="{{ t.acAvatar }}"><sc-for list="{{ acc.avOpts }}" as="o" hint-placeholder-count="12"><button type="button" class="av-o {{ o.cls }}" aria-pressed="{{ o.on }}" aria-label="{{ o.label }}" title="{{ o.label }}" onClick="{{ o.pick }}"><img data-dc-src="{{ o.img }}" alt=""></button></sc-for></div>
 <p class="ac-h3 ac-sec">{{ t.acIdent }}</p>
 <div class="ac-grid"><sc-for list="{{ acc.signupIdent }}" as="f" hint-placeholder-count="6">
 <div class="ac-f {{ f.cls }}"><label for="{{ f.id }}">{{ f.label }} <b aria-hidden="true">*</b></label><input id="{{ f.id }}" type="{{ f.type }}" value="{{ f.value }}" onInput="{{ f.on }}" onChange="{{ f.on }}" autocomplete="{{ f.ac }}" inputmode="{{ f.im }}" placeholder="{{ f.ph }}" aria-invalid="{{ f.inv }}" autocapitalize="none" spellcheck="false"><sc-if value="{{ f.hasHint }}" hint-placeholder-val="{{ false }}"><p class="ac-hint">{{ f.hint }}</p></sc-if><sc-if value="{{ f.hasErr }}" hint-placeholder-val="{{ false }}"><p class="ac-err" role="alert">{{ f.err }}</p></sc-if></div>
@@ -1842,8 +1866,8 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <sc-if value="{{ acc.profileView }}" hint-placeholder-val="{{ false }}">
 <form class="ac-form" onSubmit="{{ acc.saveProfile }}">
 <sc-if value="{{ acc.hasMsg }}" hint-placeholder-val="{{ false }}"><p class="ac-ok" role="status">{{ acc.msg }}</p></sc-if>
-<div class="ac-ph"><span class="av av-l {{ acc.avCls }}"><img src="{{ acc.avImg }}" alt=""></span><div class="ac-phb"><p class="ac-who"><b>{{ acc.mePseudo }}</b><span>{{ acc.meEmail }}</span></p><p class="ac-hint">{{ t.acAvatarNote }}</p></div></div>
-<div class="av-pick" role="group" aria-label="{{ t.acAvatar }}"><sc-for list="{{ acc.avOpts }}" as="o" hint-placeholder-count="12"><button type="button" class="av-o {{ o.cls }}" aria-pressed="{{ o.on }}" aria-label="{{ o.label }}" title="{{ o.label }}" onClick="{{ o.pick }}"><img src="{{ o.img }}" alt=""></button></sc-for></div>
+<div class="ac-ph"><span class="av av-l {{ acc.avCls }}"><img data-dc-src="{{ acc.avImg }}" alt=""></span><div class="ac-phb"><p class="ac-who"><b>{{ acc.mePseudo }}</b><span>{{ acc.meEmail }}</span></p><p class="ac-hint">{{ t.acAvatarNote }}</p></div></div>
+<div class="av-pick" role="group" aria-label="{{ t.acAvatar }}"><sc-for list="{{ acc.avOpts }}" as="o" hint-placeholder-count="12"><button type="button" class="av-o {{ o.cls }}" aria-pressed="{{ o.on }}" aria-label="{{ o.label }}" title="{{ o.label }}" onClick="{{ o.pick }}"><img data-dc-src="{{ o.img }}" alt=""></button></sc-for></div>
 <p class="ac-h3 ac-sec">{{ t.acIdent }}</p>
 <div class="ac-grid"><sc-for list="{{ acc.profileIdent }}" as="f" hint-placeholder-count="4">
 <div class="ac-f {{ f.cls }}"><label for="{{ f.id }}">{{ f.label }} <b aria-hidden="true">*</b></label><input id="{{ f.id }}" type="{{ f.type }}" value="{{ f.value }}" onInput="{{ f.on }}" onChange="{{ f.on }}" autocomplete="{{ f.ac }}" inputmode="{{ f.im }}" placeholder="{{ f.ph }}" aria-invalid="{{ f.inv }}" autocapitalize="none" spellcheck="false"><sc-if value="{{ f.hasHint }}" hint-placeholder-val="{{ false }}"><p class="ac-hint">{{ f.hint }}</p></sc-if><sc-if value="{{ f.hasErr }}" hint-placeholder-val="{{ false }}"><p class="ac-err" role="alert">{{ f.err }}</p></sc-if></div>
@@ -1870,14 +1894,14 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <sc-if value="{{ rvf.isMe }}" hint-placeholder-val="{{ false }}">
 <div class="ac-form">
 <p class="ac-intro">{{ t.rvFormIntro }}</p>
-<div class="rv-me"><span class="av av-m {{ rvf.avCls }}"><img src="{{ rvf.avImg }}" alt=""></span><b>{{ rvf.pseudo }}</b></div>
+<div class="rv-me"><span class="av av-m {{ rvf.avCls }}"><img data-dc-src="{{ rvf.avImg }}" alt=""></span><b>{{ rvf.pseudo }}</b></div>
 <p class="ac-h3" id="rv-rate">{{ t.rvRate }}</p>
 <div class="rv-st" role="group" aria-labelledby="rv-rate"><sc-for list="{{ rvf.stars }}" as="s" hint-placeholder-count="5"><button type="button" class="rv-sb {{ s.cls }}" aria-pressed="{{ s.pr }}" aria-label="{{ s.label }}" onClick="{{ s.pick }}"><svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M12 2.6l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.5 6.1 20.6l1.2-6.5L2.5 9.5l6.6-.9z"></path></svg></button></sc-for></div>
 <div class="ac-f"><label for="rv-p">{{ t.rvPerfume }}</label><input id="rv-p" type="text" value="{{ rvf.parfum }}" onInput="{{ rvf.onParfum }}" onChange="{{ rvf.onParfum }}" autocomplete="off"></div>
 <div class="ac-f"><label for="rv-t">{{ t.rvText }} <b aria-hidden="true">*</b></label><textarea id="rv-t" rows="5" maxlength="400" value="{{ rvf.txt }}" onInput="{{ rvf.onTxt }}" onChange="{{ rvf.onTxt }}"></textarea><p class="ac-hint">{{ t.rvTextHint }} <span class="rv-left">{{ rvf.left }}</span></p></div>
 <label class="ac-ck" for="rv-ok"><input id="rv-ok" type="checkbox" checked="{{ rvf.ok }}" onChange="{{ rvf.onOk }}"><span>{{ t.rvConsent }}</span></label>
 <sc-if value="{{ rvf.done }}" hint-placeholder-val="{{ false }}"><p class="ac-ok" role="status">{{ t.rvThanks }}</p></sc-if>
-<sc-if value="{{ rvf.valid }}" hint-placeholder-val="{{ false }}"><div class="ac-nb rv-send"><a href="{{ rvf.wa }}" class="cta ac-cta" onClick="{{ rvf.sent }}">{{ t.rvSendWa }}</a><a href="{{ rvf.mail }}" class="cta ac-cta2" onClick="{{ rvf.sent }}">{{ t.rvSendMail }}</a></div></sc-if>
+<sc-if value="{{ rvf.valid }}" hint-placeholder-val="{{ false }}"><div class="ac-nb rv-send"><a data-dc-href="{{ rvf.wa }}" class="cta ac-cta" onClick="{{ rvf.sent }}">{{ t.rvSendWa }}</a><a data-dc-href="{{ rvf.mail }}" class="cta ac-cta2" onClick="{{ rvf.sent }}">{{ t.rvSendMail }}</a></div></sc-if>
 <sc-if value="{{ rvf.invalid }}" hint-placeholder-val="{{ true }}"><div class="ac-nb rv-send"><button type="button" class="cta ac-cta" disabled>{{ t.rvSendWa }}</button><button type="button" class="cta ac-cta2" disabled>{{ t.rvSendMail }}</button></div></sc-if>
 <p class="ac-note">{{ t.rvSendNote }}</p>
 </div>
@@ -1907,6 +1931,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 
 </div>
 </x-dc>
+<nav class="seo-all" aria-label="Tous nos parfums"><h2>Tous nos parfums</h2><p><strong>Atelier Materi</strong><a href="/parfum/burgundy-oud-atelier-materi/">Burgundy Oud</a></p><p><strong>BDK Parfums</strong><a href="/parfum/bouquet-de-hongrie-bdk-parfums/">Bouquet de Hongrie</a></p><p><strong>Bohoboco</strong><a href="/parfum/wet-cherry-liquor-bohoboco/">Wet Cherry Liquor</a></p><p><strong>D&#x27;Orsay</strong><a href="/parfum/tonka-hysteria-dorsay/">Tonka Hysteria</a> · <a href="/parfum/flower-lust-dorsay/">Flower Lust</a> · <a href="/parfum/incense-crush-dorsay/">Incense Crush</a></p><p><strong>Ella K</strong><a href="/parfum/lettre-de-pushkar-ella-k/">Lettre de Pushkar</a> · <a href="/parfum/ghibli-ella-k/">Ghibli</a> · <a href="/parfum/musc-k-ella-k/">Musc K</a> · <a href="/parfum/myrrh-k-ella-k/">Myrrh K</a></p><p><strong>Frédéric Malle</strong><a href="/parfum/musc-ravageur-frederic-malle/">Musc Ravageur</a> · <a href="/parfum/portrait-of-a-lady-frederic-malle/">Portrait of a Lady</a></p><p><strong>Giardini di Toscana</strong><a href="/parfum/bianco-latte-giardini-di-toscana/">Bianco Latte</a></p><p><strong>Initio</strong><a href="/parfum/side-effect-initio/">Side Effect</a></p><p><strong>Katana Parfums</strong><a href="/parfum/ambre-fume-katana-parfums/">Ambre Fumé</a></p><p><strong>Kilian Paris</strong><a href="/parfum/angels-share-paradis-kilian-paris/">Angels&#x27; Share Paradis</a> · <a href="/parfum/angels-share-kilian-paris/">Angels&#x27; Share</a></p><p><strong>Les Eaux Primordiales</strong><a href="/parfum/ambre-supermassive-les-eaux-primordiales/">Ambre Supermassive</a> · <a href="/parfum/couleur-primaire-les-eaux-primordiales/">Couleur Primaire</a> · <a href="/parfum/elevation-les-eaux-primordiales/">Élévation</a></p><p><strong>Les Liquides Imaginaires</strong><a href="/parfum/blanche-bete-les-liquides-imaginaires/">Blanche Bête</a></p><p><strong>Les Princes du Golfe</strong><a href="/parfum/exquisite-pear-les-princes-du-golfe/">Exquisite Pear</a> · <a href="/parfum/citron-macaron-les-princes-du-golfe/">Citron Macaron</a> · <a href="/parfum/cherry-of-cashmere-les-princes-du-golfe/">Cherry of Cashmere</a> · <a href="/parfum/milky-macaron-les-princes-du-golfe/">Milky Macaron</a></p><p><strong>Maison de Soie</strong><a href="/parfum/suave-addiction-maison-de-soie/">Suave Addiction</a></p><p><strong>Maison Lancôme</strong><a href="/parfum/oud-bouquet-maison-lancome/">Oud Bouquet</a></p><p><strong>Maison Mataha</strong><a href="/parfum/escapade-gourmande-maison-mataha/">Escapade Gourmande</a></p><p><strong>Matière Première</strong><a href="/parfum/radical-rose-matiere-premiere/">Radical Rose</a> · <a href="/parfum/encens-suave-matiere-premiere/">Encens Suave</a> · <a href="/parfum/vanilla-powder-matiere-premiere/">Vanilla Powder</a> · <a href="/parfum/crystal-saffron-matiere-premiere/">Crystal Saffron</a> · <a href="/parfum/french-flower-matiere-premiere/">French Flower</a></p><p><strong>Memo Paris</strong><a href="/parfum/palais-bourbon-memo-paris/">Palais Bourbon</a> · <a href="/parfum/odeon-memo-paris/">Odéon</a></p><p><strong>Mizensir</strong><a href="/parfum/ambre-magique-mizensir/">Ambre Magique</a></p><p><strong>Nishane</strong><a href="/parfum/ani-nishane/">Ani</a> · <a href="/parfum/hundred-silent-ways-nishane/">Hundred Silent Ways</a> · <a href="/parfum/hacivat-nishane/">Hacivat</a></p><p><strong>OJAR</strong><a href="/parfum/halwa-kiss-ojar/">Halwa Kiss</a> · <a href="/parfum/oud-whisper-ojar/">Oud Whisper</a> · <a href="/parfum/wood-whisper-ojar/">Wood Whisper</a></p><p><strong>Oman Luxury</strong><a href="/parfum/caden-oman-luxury/">Caden</a> · <a href="/parfum/paramour-oman-luxury/">Paramour</a> · <a href="/parfum/oud-aquilaria-oman-luxury/">Oud Aquilaria</a></p><p><strong>Parfums de Marly</strong><a href="/parfum/athenais-parfums-de-marly/">Athénaïs</a> · <a href="/parfum/althair-parfums-de-marly/">Althaïr</a> · <a href="/parfum/oajan-parfums-de-marly/">Oajan</a> · <a href="/parfum/althair-exclusif-parfums-de-marly/">Althaïr Exclusif</a></p><p><strong>Ramon Monegal</strong><a href="/parfum/flamenco-extrait-ramon-monegal/">Flamenco Extrait</a> · <a href="/parfum/flamenco-eau-de-parfum-ramon-monegal/">Flamenco Eau de Parfum</a></p><p><strong>Ramón Béjar</strong><a href="/parfum/anima-viva-ramon-bejar/">Ánima Viva</a> · <a href="/parfum/deep-amber-ramon-bejar/">Deep Amber</a></p><p><strong>Reinvented</strong><a href="/parfum/sacred-bond-reinvented/">Sacred Bond</a></p><p><strong>Relicta</strong><a href="/parfum/desirs-interdits-acte-1-relicta/">Désirs Interdits Acte 1</a></p><p><strong>Room 1015</strong><a href="/parfum/jasmine-freak-room-1015/">Jasmine Freak</a></p><p><strong>Rosendo Mateu</strong><a href="/parfum/n-5-rosendo-mateu/">N° 5</a></p><p><strong>Silona Paris</strong><a href="/parfum/like-no-one-silona-paris/">Like No One</a></p><p><strong>Xerjoff</strong><a href="/parfum/naxos-xerjoff/">Naxos</a></p><p><strong>Yves Saint Laurent</strong><a href="/parfum/babycat-yves-saint-laurent/">Babycat</a> · <a href="/parfum/gold-yves-saint-laurent/">Gold</a> · <a href="/parfum/tuxedo-yves-saint-laurent/">Tuxedo</a></p></nav>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":14400},"saison":{"editor":"enum","default":"Automne · Hiver","section":"Parfums du moment","options":["Automne · Hiver","Printemps · Été"]}}'>
 class Component extends DCLogic {
   constructor(props) {
@@ -2153,6 +2178,7 @@ class Component extends DCLogic {
     } catch (err) {}
   }
   componentDidMount() {
+    try { const m = /^#p=([a-z0-9-]+)$/.exec(window.location.hash || ''); const nom = m && this._slugMap && this._slugMap[m[1]]; if (nom) this.setState({ detail: nom, open: false, menu: false }); } catch (err) {}
     try {
       let raf = 0;
       const upd = () => {
@@ -3054,6 +3080,9 @@ class Component extends DCLogic {
         hook: ["Un santal chaud et apaisant, enrobé de prune, de violette et d'ambre gris : une forêt tendre.", "A warm, soothing sandalwood wrapped in plum, violet and ambergris: a gentle forest."],
         desc: ["Wood Whisper dessine une forêt en douceur. Au centre, un santal chaud et apaisant, accompagné de violette et de bois de cachemire ; la rose et la prune ajoutent une richesse sucrée et crémeuse dès l'ouverture. Le fond d'ambre blanc, de vanille, d'ambre gris et de musc donne une profondeur terreuse et enveloppante. Un boisé confortable, élégant, facile à porter.", "Wood Whisper draws a forest in soft strokes. At its centre, a warm, soothing sandalwood joined by violet and cashmere wood; rose and plum add a sweet, creamy richness from the opening. The base of white amber, vanilla, ambergris and musk gives an earthy, enveloping depth. A comfortable, elegant, easy-to-wear woody."] }
     ];
+    // v61 : identifiant d'adresse par parfum (identique à celui des pages /parfum/<slug>/)
+    const slugOf = (nom, maison) => (nom + ' ' + maison).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/['’]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    this._slugMap = {}; RAW.forEach(r => { this._slugMap[slugOf(r.nom, r.maison)] = r.nom; });
 
     const norm = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/['’]/g, '');
     // regroupe les variantes d'une même note (« Écorce de cannelle » → cannelle…) pour le filtre
@@ -3091,7 +3120,7 @@ class Component extends DCLogic {
       const poPc = poOk ? '−' + Math.round((1 - refF.p / poE[0]) * 100) + ' %' : '';
       const first = p.pyr ? [p.pyr.head[0], p.pyr.heart[0], p.pyr.base[0]] : p.flat.slice(0, 3);
       return {
-        ...p, hasPo: poOk, poTxt: poOk ? L('Prix public ', 'Retail price ') + poV : '', poTxtS: poOk ? L('Public ', 'Retail ') + poV : '', poTxtL: poOk ? L('Prix public constaté : ', 'Retail price seen: ') + poV : '', poPct: poPc,
+        ...p, alt: p.nom + ', ' + p.maison, hasPo: poOk, poTxt: poOk ? L('Prix public ', 'Retail price ') + poV : '', poTxtS: poOk ? L('Public ', 'Retail ') + poV : '', poTxtL: poOk ? L('Prix public constaté : ', 'Retail price seen: ') + poV : '', poPct: poPc,
         poSrcTxt: poOk ? L('Source : ', 'Source: ') + poE[1] + L(', relevé le ', ', checked on ') + PO_DATE + L(' (contenance identique). Prix susceptible d’évoluer.', ' (same size). Price may change.') : '',
         poUrl: poOk ? poE[2] : '#', poLink: L('voir la source', 'view source'),
         minP, hasFrom: multi && varies && !touched(p), fromTxt: multi && varies && !touched(p) ? t.from : '',
@@ -3161,7 +3190,7 @@ class Component extends DCLogic {
     const qN = Math.ceil(nW / 4);
     const rowOf = (a, b) => {
       const half = wallOrder.slice(a, b);
-      return [...half, ...half].map((p, i) => ({ nom: p.nom, maison: p.maison, img: TH[p.nom] || p.img, open: p.open, aria: i >= half.length ? 'true' : 'false', tab: i >= half.length ? -1 : 0 }));
+      return [...half, ...half].map((p, i) => ({ nom: p.nom, maison: p.maison, alt: p.nom + ', ' + p.maison, img: TH[p.nom] || p.img, open: p.open, aria: i >= half.length ? 'true' : 'false', tab: i >= half.length ? -1 : 0 }));
     };
 
     // Filtres : familles, notes, formats
@@ -3201,7 +3230,7 @@ class Component extends DCLogic {
     const MOMENT_PIN = ['Halwa Kiss', 'Désirs Interdits Acte 1', "Angels' Share"];
     const momentPinned = MOMENT_PIN.map(n => momentRaw.find(p => p.nom === n)).filter(Boolean);
     const momentSorted = momentPinned.concat([0, 1, 2].reduce((acc, k) => acc.concat(this.mixHouses(momentRaw.filter(p => !MOMENT_PIN.includes(p.nom) && tierOf(p) === k))), []));
-    const moment = momentSorted.map(p => ({ minP: p.minP, nom: p.nom, maison: p.maison, img: TH[p.nom] || p.img, hook: L(p.hook[0], p.hook[1]), keyNotes: p.keyNotes, prix: p.prix, volTxt: p.volTxt, hasFrom: p.hasFrom, open: p.open, pickBrand: p.pickBrand }));
+    const moment = momentSorted.map(p => ({ minP: p.minP, nom: p.nom, maison: p.maison, alt: p.nom + ', ' + p.maison, img: TH[p.nom] || p.img, hook: L(p.hook[0], p.hook[1]), keyNotes: p.keyNotes, prix: p.prix, volTxt: p.volTxt, hasFrom: p.hasFrom, open: p.open, pickBrand: p.pickBrand }));
     const mseason = seaKey === 'aw' ? L('Automne · Hiver', 'Autumn · Winter') : L('Printemps · Été', 'Spring · Summer');
     t.momentSub = seaKey === 'aw'
       ? L("Chaleureux, ambrés, gourmands : les parfums à porter quand l'air se rafraîchit.", 'Warm, amber, indulgent: the perfumes to wear when the air turns cool.')
@@ -3211,11 +3240,11 @@ class Component extends DCLogic {
     const dp = base.find(p => p.nom === this.state.detail);
     const emptyP = { show: false, label: '', cls: '', pick: () => {} };
     const OCC_KIND = { s: ['soiree', L('Soirée', 'Evening')], b: ['bureau', L('Bureau', 'Office')], c: ['cadeau', L('Cadeau', 'Gift')] };
-    let dt = { hasPo: false, poTxtL: '', poPct: '', poSrcTxt: '', poUrl: '#', poLink: '', hasFrom: false, nom: '', maison: '', img: '', famsText: '', hook: '', desc: '', meta: '', hasMeta: false, hasNose: false, nose: '', prix: '', wa: waHref, share: waHref, f1: emptyP, f2: emptyP, f3: emptyP, famTags: [], hasPyr: false, hasFlat: false, head: [], heart: [], base: [], flat: [], src: '', occ1: { name: '', text: '', ico: '' }, similar: [], add: () => {}, openBrand: () => {} };
+    let dt = { alt: '', hasPo: false, poTxtL: '', poPct: '', poSrcTxt: '', poUrl: '#', poLink: '', hasFrom: false, nom: '', maison: '', img: '', famsText: '', hook: '', desc: '', meta: '', hasMeta: false, hasNose: false, nose: '', prix: '', wa: waHref, share: waHref, f1: emptyP, f2: emptyP, f3: emptyP, famTags: [], hasPyr: false, hasFlat: false, head: [], heart: [], base: [], flat: [], src: '', occ1: { name: '', text: '', ico: '' }, similar: [], add: () => {}, openBrand: () => {} };
     if (dp) {
       const li = a => a.map(n => ({ txt: L(n[0], n[1]), ico: this.noteIcon(n[0]) }));
       const sim = base.filter(p => p.nom !== dp.nom).map(p => ({ p, s: p.fams.filter(k => dp.fams.includes(k)).length * 10 + p.noteKeys.filter(k => dp.noteKeys.includes(k)).length, sh: p.fams.find(k => dp.fams.includes(k)) })).sort((a, b) => b.s - a.s).slice(0, 10)
-        .map(x => ({ nom: x.p.nom, maison: x.p.maison, img: x.p.img, prix: x.p.prix, fromTxt: x.p.fromTxt, notes: x.p.keyNotes, tag: x.sh ? L('Même famille · ', 'Same family · ') + famName(x.sh) : L('À découvrir', 'To discover'), open: x.p.open, add: x.p.add }));
+        .map(x => ({ nom: x.p.nom, maison: x.p.maison, alt: x.p.nom + ', ' + x.p.maison, addAria: L('Ajouter au panier', 'Add to cart') + ' · ' + x.p.nom, img: x.p.img, prix: x.p.prix, fromTxt: x.p.fromTxt, notes: x.p.keyNotes, tag: x.sh ? L('Même famille · ', 'Same family · ') + famName(x.sh) : L('À découvrir', 'To discover'), open: x.p.open, add: x.p.add }));
       const shareTxt = L('Je te recommande ' + dp.nom + ' (' + dp.maison + ') · ' + dp.volTxt + ' ' + dp.pAt + ', repéré chez Olfactive Stories. Notes : ' + dp.keyNotes + '.', 'I recommend ' + dp.nom + ' (' + dp.maison + ') · ' + dp.volTxt + ' ' + dp.pAt + ', found at Olfactive Stories. Notes: ' + dp.keyNotes + '.');
       const meta = dp.conc ? L(dp.conc[0], dp.conc[1]) : '';
       dt = {
@@ -3224,7 +3253,7 @@ class Component extends DCLogic {
         hook: L(dp.hook[0], dp.hook[1]), desc: L(dp.desc[0], dp.desc[1]),
         meta, hasMeta: !!meta, hasNose: !!dp.nose, nose: dp.nose || '',
         handTxt: dp.cp >= 150 ? L('Remise en main propre possible : 5 € déduits sur ce parfum (à partir de 150 €), à convenir par WhatsApp.', 'Hand delivery possible: €5 off this perfume (priced €150 or more), arranged on WhatsApp.') : L('Remise en main propre possible, à convenir par WhatsApp.', 'Hand delivery possible, arranged on WhatsApp.'),
-        hasPo: dp.hasPo, poTxtL: dp.poTxtL, poPct: dp.poPct, poSrcTxt: dp.poSrcTxt, poUrl: dp.poUrl, poLink: dp.poLink,
+        alt: dp.alt, hasPo: dp.hasPo, poTxtL: dp.poTxtL, poPct: dp.poPct, poSrcTxt: dp.poSrcTxt, poUrl: dp.poUrl, poLink: dp.poLink,
         hasFrom: dp.hasFrom, prix: dp.prix, wa: 'https://wa.me/33662859910?text=' + encodeURIComponent(L('Bonjour, je suis intéressé(e) par ' + dp.nom + ' (' + dp.volTxt + ') ' + dp.pAt + '.', 'Hello, I am interested in ' + dp.nom + ' (' + dp.volTxt + ') ' + dp.pAt + '.')),
         share: 'https://wa.me/?text=' + encodeURIComponent(shareTxt),
         f1: dp.f1, f2: dp.f2, f3: dp.f3,
@@ -3331,7 +3360,7 @@ class Component extends DCLogic {
       recs = top.map((x, i) => {
         const aff = Math.max(55, Math.min(99, Math.round(55 + 44 * Math.max(0, x.sc) / maxS)));
         return {
-          rankTxt: 'N° ' + (i + 1), rankLbl: RK[i], nom: x.p.nom, maison: x.p.maison, img: x.p.img, volTxt: x.p.volTxt,
+          rankTxt: 'N° ' + (i + 1), rankLbl: RK[i], nom: x.p.nom, maison: x.p.maison, alt: x.p.nom + ', ' + x.p.maison, img: x.p.img, volTxt: x.p.volTxt,
           prix: x.p.prix, fromTxt: x.p.hasFrom ? x.p.fromTxt : '', multi: x.p.formats.length > 1, f1: x.p.f1, f2: x.p.f2, f3: x.p.f3, aff, affTxt: aff + ' %',
           why: x.why.length ? x.why.slice(0, 4).join(' · ') : L('Une belle découverte dans notre sélection', 'A lovely find in our selection'),
           open: (e) => this.openDetail(x.p.nom, e), add: x.p.add
@@ -3478,7 +3507,7 @@ class Component extends DCLogic {
     const formErr = accErr.form === 'bad' ? t.acBad : accErr.form === 'store' ? t.acStore : '';
     const wishLines = this.curWish().filter(n => baseBy[n]).map(n => {
       const p = baseBy[n];
-      return { nom: n, maison: p.maison, img: p.img, prix: p.prix, fromTxt: p.fromTxt, hasFrom: p.hasFrom, open: p.open, add: p.add, rm: () => this.toggleWish(n) };
+      return { nom: n, maison: p.maison, viewAria: t.wView + ' : ' + n, img: p.img, prix: p.prix, fromTxt: p.fromTxt, hasFrom: p.hasFrom, open: p.open, add: p.add, rm: () => this.toggleWish(n) };
     });
     const wishShare = 'https://wa.me/?text=' + encodeURIComponent(L('Ma wishlist Olfactive Stories :', 'My Olfactive Stories wishlist:') + '\n' + wishLines.map(l => '• ' + l.nom + ' (' + l.maison + ')').join('\n'));
     const tabsDef = [['wish', t.tabWish, wishLines.length], ['account', t.tabAcc, 0], ['review', t.tabRev, 0]];

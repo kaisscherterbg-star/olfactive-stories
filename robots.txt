@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://olfactistories.netlify.app/sitemap.xml
