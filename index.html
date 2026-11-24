@@ -1030,6 +1030,11 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 .dt-tag img{display:block;width:60px;height:60px;box-sizing:border-box;padding:4px;object-fit:contain;border-radius:18px;background:radial-gradient(circle at 50% 38%,#fff 55%,#F4EEE4 100%);box-shadow:0 1px 6px rgba(42,38,34,.1)}
 /* flocons : seulement en haut de l'accueil, jamais sur les photos de flacons */
 .snow{position:absolute;inset:0 0 auto 0;height:min(100vh,860px)}
+
+/* v59 : « Idées cadeaux de Noël » fixe (ni entrée animée, ni reflet, ni étoile qui pulse) */
+.hero-txt>.noel-row{animation:none}
+.hero-txt .noel-pill::after{display:none;animation:none}
+.noel-pill span{animation:none;transform:none}
 </style>
 </helmet>
 <div style="background:#F1ECE4;color:#2A2622;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:400;line-height:1.6">
