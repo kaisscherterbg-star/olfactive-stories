@@ -529,7 +529,7 @@ button{font-family:inherit;color:inherit;cursor:pointer}
 @media (min-width:900px){.ha-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:26px 20px}}
 .ha-l{grid-column:1/-1;margin:22px 0 0;padding-bottom:8px;border-bottom:1px solid #D9D1C3;font-family:'Bodoni Moda',serif;font-weight:500;font-size:30px;line-height:1;color:#8A5A3B}
 .ha-c{display:flex;flex-direction:column;gap:5px;background:none;border:0;padding:0;text-align:left;font-family:inherit;cursor:pointer}
-.ha-ph{display:block;aspect-ratio:1/1;border-radius:12px;overflow:hidden;background:#3B2A1F}
+.ha-ph{display:block;aspect-ratio:1/1;border-radius:12px;overflow:hidden;background:#E6DCCD}
 .ha-ph img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
 .ha-c:hover .ha-ph img{transform:scale(1.04)}
 .ha-n{margin-top:8px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:600;font-size:16px;color:#2A2622;letter-spacing:-.01em}
@@ -549,7 +549,7 @@ button{font-family:inherit;color:inherit;cursor:pointer}
 @media (min-width:1000px){.hx-c{width:calc((100% - 44px)/3)}}
 .hx-c .hx-n{font-size:clamp(22px,2.3vw,28px)}
 .hx-c .hx-t{font-size:16px}
-.hx-ph{display:block;width:100%;aspect-ratio:1/1;border:0;padding:0;border-radius:6px;overflow:hidden;background:#3B2A1F;cursor:pointer}
+.hx-ph{display:block;width:100%;aspect-ratio:1/1;border:0;padding:0;border-radius:6px;overflow:hidden;background:#E6DCCD;cursor:pointer}
 .hx-ph img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
 .hx-c:hover .hx-ph img{transform:scale(1.04)}
 .hx-n{margin:20px 0 4px;font-family:'Bodoni Moda',serif;font-weight:500;font-size:22px;letter-spacing:.02em;text-transform:uppercase;color:#2F2016;line-height:1.2}
@@ -1176,13 +1176,13 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <article class="hx-c">
 <button type="button" class="hx-ph" onClick="{{ h.open }}" aria-label="{{ h.name }}"><img src="{{ h.img }}" alt="{{ h.name }}"></button>
 <h3 class="hx-n">{{ h.name }}</h3>
-<p class="hx-tg">{{ h.tag }} · {{ h.count }}</p>
+<p class="hx-tg">{{ h.tag }}</p>
 <p class="hx-t">{{ h.teaser }}</p>
 <button type="button" class="hx-m" onClick="{{ h.open }}">{{ t.readMore }}</button>
 </article>
 </sc-for>
 </div>
-<div class="hx-idx"><p class="hx-idx-t">{{ t.hsIdxT }}<i>{{ houseCountTxt }}</i></p><div class="hx-chips"><sc-for list="{{ houseIdx }}" as="m" hint-placeholder-count="12"><button type="button" class="hx-chip" onClick="{{ m.pick }}"><span>{{ m.label }}</span><i>{{ m.count }}</i></button></sc-for></div></div>
+<div class="hx-idx"><p class="hx-idx-t">{{ t.hsIdxT }}<i>{{ houseCountTxt }}</i></p><div class="hx-chips"><sc-for list="{{ houseIdx }}" as="m" hint-placeholder-count="12"><button type="button" class="hx-chip" onClick="{{ m.pick }}"><span>{{ m.label }}</span></button></sc-for></div></div>
 </section>
 
 <section class="rvw" id="avis" aria-labelledby="rvw-h">
@@ -1354,7 +1354,6 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <header class="hs-head">
 <p class="hs-over">{{ hs.tag }}</p>
 <h1 class="hs-title">{{ hs.name }}</h1>
-<p class="hs-count">{{ hs.countTxt }}</p>
 </header>
 <div class="hs-grid">
 <sc-for list="{{ hs.cards }}" as="p" hint-placeholder-count="3">
@@ -1429,7 +1428,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <div class="ha-grid">
 <sc-for list="{{ hAllList }}" as="x" hint-placeholder-count="6">
 <sc-if value="{{ x.isHead }}" hint-placeholder-val="{{ false }}"><h3 class="ha-l">{{ x.letter }}</h3></sc-if>
-<sc-if value="{{ x.isItem }}" hint-placeholder-val="{{ true }}"><button type="button" class="ha-c" onClick="{{ x.open }}"><span class="ha-ph"><img src="{{ x.img }}" alt="" loading="lazy"></span><span class="ha-n">{{ x.name }}</span><span class="ha-k">{{ x.tag }} · {{ x.count }}</span></button></sc-if>
+<sc-if value="{{ x.isItem }}" hint-placeholder-val="{{ true }}"><button type="button" class="ha-c" onClick="{{ x.open }}"><span class="ha-ph"><img src="{{ x.img }}" alt="" decoding="async"></span><span class="ha-n">{{ x.name }}</span><span class="ha-k">{{ x.tag }}</span></button></sc-if>
 </sc-for>
 </div>
 </div>
@@ -1548,7 +1547,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <article class="hx-c">
 <button type="button" class="hx-ph" onClick="{{ h.open }}" aria-label="{{ h.name }}"><img src="{{ h.img }}" alt="{{ h.name }}"></button>
 <h3 class="hx-n">{{ h.name }}</h3>
-<p class="hx-tg">{{ h.tag }} · {{ h.count }}</p>
+<p class="hx-tg">{{ h.tag }}</p>
 <p class="hx-t">{{ h.teaser }}</p>
 <button type="button" class="hx-m" onClick="{{ h.open }}">{{ t.readMore }}</button>
 </article>
@@ -2019,11 +2018,13 @@ class Component extends DCLogic {
       this._onUi = () => { this._ui = Date.now(); this._hold = 0; };
       this._onClk = (e) => { try { const a = e.target && e.target.closest && e.target.closest('a[href="#collection"]'); if (a) e.preventDefault(); } catch (err) {} };
       document.addEventListener('click', this._onClk, true);
+      this._onImgErr = (e) => { try { const i = e && e.target; if (!i || i.tagName !== 'IMG' || (i.dataset && i.dataset.rt)) return; const s = i.getAttribute('src') || ''; if (!s || s.charAt(0) === '{' || s.indexOf('data:') === 0) return; i.dataset.rt = '1'; setTimeout(() => { try { i.src = s + (s.indexOf('?') < 0 ? '?r=1' : '&r=1'); } catch (err) {} }, 700); } catch (err) {} };
+      document.addEventListener('error', this._onImgErr, true);
       ['wheel', 'touchmove', 'keydown', 'mousedown'].forEach(ev => document.addEventListener(ev, this._onUi, { capture: true, passive: true }));
       upd();
     } catch (err) {}
   }
-  componentWillUnmount() { try { document.removeEventListener('click', this._onClk, true); document.removeEventListener('scroll', this._onScroll, true); ['wheel', 'touchmove', 'keydown', 'mousedown'].forEach(ev => document.removeEventListener(ev, this._onUi, true)); } catch (err) {} }
+  componentWillUnmount() { try { document.removeEventListener('error', this._onImgErr, true); document.removeEventListener('click', this._onClk, true); document.removeEventListener('scroll', this._onScroll, true); ['wheel', 'touchmove', 'keydown', 'mousedown'].forEach(ev => document.removeEventListener(ev, this._onUi, true)); } catch (err) {} }
   nativeScroll() {
     try {
       if (this._nat !== undefined) return this._nat;
@@ -3387,7 +3388,7 @@ class Component extends DCLogic {
     let countLabel = '';
     if (n > 0) {
       if (q) countLabel = n + ' ' + plural(n, 'résultat', 'résultats', 'result', 'results');
-      else if (brand) countLabel = brand + ' · ' + refs;
+      else if (brand) countLabel = brand;
       else if (anyFilter) countLabel = activeBits.join(' · ') + ' · ' + refs;
       else countLabel = n + ' ' + L('références sélectionnées', 'hand-picked products');
     }
