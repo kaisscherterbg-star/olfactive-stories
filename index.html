@@ -1006,6 +1006,30 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 .avn-rose{background:#F3D8DC}.avn-vanilla{background:#EDE0CB}.avn-lavender{background:#E6E0F2}.avn-iris{background:#DEE0F4}
 .avn-honey{background:#F7E8BE}.avn-coffee{background:#E9D9C6}.avn-cinnamon{background:#F2E0C9}.avn-peach{background:#FCDECB}
 .avn-saffron{background:#F8E3C8}.avn-incense{background:#EEE8D8}.avn-magnolia{background:#F3E6EC}.avn-tonka{background:#E6D6C3}
+
+/* v58 : valeur perçue — photos plus présentes, bandeau de réassurance, notes sur les cartes, fiche enrichie */
+.pimg{transform:scale(1.12);transform-origin:50% 74%;filter:sepia(.05) saturate(.97)}
+.dt-img img{transform:scale(1.1);transform-origin:50% 74%;filter:sepia(.05) saturate(.97)}
+@media (hover:hover){.card:hover .pimg{transform:scale(1.16)}}
+.cn{margin:4px 0 0;font-size:12.5px;line-height:1.45;color:#7A7066;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.svc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 14px;padding:30px 5vw;background:#F8F4EC;border-bottom:1px solid #E5DCCD}
+.svc-i{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+.svc-ic{flex:none;display:flex;align-items:center;justify-content:center;width:46px;height:46px;border:1px solid #CDBFAE;border-radius:50%;color:#4A3426;background:#FCFAF5}
+.svc-t{margin:0 0 4px;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:#2A2622;line-height:1.35}
+.svc-d{margin:0;font-size:13px;line-height:1.45;color:#6B635A}
+@media (min-width:900px){
+.svc{grid-template-columns:repeat(4,minmax(0,1fr));gap:0 32px;padding:34px max(5vw,calc((100vw - 1180px)/2))}
+.svc-i{flex-direction:row;align-items:flex-start;text-align:left;gap:16px}
+.svc-i+.svc-i{border-left:1px solid #E5DCCD;padding-left:28px}
+}
+.dt-ass{display:grid;gap:11px;margin:24px 0 0;padding:18px 20px;background:#F8F4EC;border:1px solid #E5DCCD;border-radius:12px}
+.dt-ass>span{position:relative;padding-left:28px;font-size:13.5px;line-height:1.45;letter-spacing:.01em;text-transform:none;color:#4A3F36}
+.dt-ass>span::before{content:"";position:absolute;left:0;top:1px;width:17px;height:17px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7.3' fill='none' stroke='%238A5A3B' stroke-width='1'/%3E%3Cpath d='M4.8 8.2l2.3 2.3 4.2-4.6' fill='none' stroke='%238A5A3B' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+.dt-tags{display:flex;flex-wrap:wrap;gap:12px}
+.dt-tag{display:flex;flex-direction:column;align-items:center;gap:8px;width:96px;padding:12px 6px 11px;border:1px solid #E0D6C6;border-radius:14px;background:#FBF8F2;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#4A3426;font-weight:500;text-align:center}
+.dt-tag img{display:block;width:60px;height:60px;box-sizing:border-box;padding:4px;object-fit:contain;border-radius:18px;background:radial-gradient(circle at 50% 38%,#fff 55%,#F4EEE4 100%);box-shadow:0 1px 6px rgba(42,38,34,.1)}
+/* flocons : seulement en haut de l'accueil, jamais sur les photos de flacons */
+.snow{position:absolute;inset:0 0 auto 0;height:min(100vh,860px)}
 </style>
 </helmet>
 <div style="background:#F1ECE4;color:#2A2622;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:400;line-height:1.6">
@@ -1116,6 +1140,13 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <button type="button" class="bnav" onClick="{{ brandNext }}" aria-label="{{ t.next }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg></button>
 </nav>
 
+<section class="svc" aria-label="{{ sv.aria }}">
+<div class="svc-i"><span class="svc-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 3.5h10l4 5.5-9 11.5L3 9z"></path><path d="M3 9h18M9.5 9 12 3.5 14.5 9M9.5 9l2.5 11.5L14.5 9"></path></svg></span><div><h3 class="svc-t">{{ sv.t1 }}</h3><p class="svc-d">{{ sv.d1 }}</p></div></div>
+<div class="svc-i"><span class="svc-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.5 7.5 12 3l8.5 4.5v9L12 21l-8.5-4.5z"></path><path d="M3.5 7.5 12 12l8.5-4.5M12 12v9"></path></svg></span><div><h3 class="svc-t">{{ sv.t2 }}</h3><p class="svc-d">{{ sv.d2 }}</p></div></div>
+<div class="svc-i"><span class="svc-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.5 3h5v3h-5z"></path><path d="M8 6h8v13a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2z"></path><path d="M8 12h8"></path></svg></span><div><h3 class="svc-t">{{ sv.t3 }}</h3><p class="svc-d">{{ sv.d3 }}</p></div></div>
+<div class="svc-i"><span class="svc-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.5 5h15a1 1 0 0 1 1 1v9.5a1 1 0 0 1-1 1H10L5.5 20v-3.5h-1a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"></path><path d="M8 9.5h8M8 12.5h5"></path></svg></span><div><h3 class="svc-t">{{ sv.t4 }}</h3><p class="svc-d">{{ sv.d4 }}</p></div></div>
+</section>
+
 <section class="moment" aria-label="{{ t.momentTitle }}">
 <div class="sp" aria-hidden="true"><i style="--x:7%;--y:3%;--s:14px;--d:5s;--w:0s"></i><i style="--x:50%;--y:4%;--s:12px;--d:5.6s;--w:-1.7s"></i><i style="--x:94%;--y:8%;--s:16px;--d:4.4s;--w:-2.6s"></i><i style="--x:97%;--y:36%;--s:11px;--d:5.2s;--w:-0.9s"></i><i style="--x:3%;--y:44%;--s:12px;--d:5.8s;--w:-3.4s"></i></div>
 <svg class="fir fl" viewBox="0 0 240 110" aria-hidden="true" focusable="false"><use href="#fir"></use></svg><svg class="fir fr" viewBox="0 0 240 110" aria-hidden="true" focusable="false"><use href="#fir"></use></svg>
@@ -1164,10 +1195,6 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <button type="button" class="gf-q" onClick="{{ openQuiz }}">{{ t.gfQuiz }}</button>
 </section>
 
-<section style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px 44px;padding:26px 6vw;border-bottom:1px solid #E0D8CA;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#6B635A;text-align:center">
-<sc-for list="{{ eng }}" as="e" hint-placeholder-count="4"><span>{{ e.txt }}</span></sc-for>
-</section>
-
 <section class="sel" id="selections" aria-label="{{ selAria }}">
 <sc-for list="{{ selBlocks }}" as="bk" hint-placeholder-count="3">
 <div class="sel-b {{ bk.cls }}">
@@ -1186,6 +1213,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <div class="body">
 <a href="#collection" class="mais" onClick="{{ p.pickBrand }}">{{ p.maison }}</a>
 <button type="button" class="nom" onClick="{{ p.open }}">{{ p.nom }}</button>
+<p class="cn">{{ p.keyNotes }}</p>
 <div class="prix"><span class="pfrom">{{ p.fromTxt }}</span><b>{{ p.prix }}</b></div>
 <div class="fmts">
 <sc-if value="{{ p.f1.show }}" hint-placeholder-val="{{ true }}"><button type="button" class="fm {{ p.f1.cls }}" onClick="{{ p.f1.pick }}">{{ p.f1.label }}</button></sc-if>
@@ -1252,6 +1280,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <div class="body">
 <a href="#collection" class="mais" onClick="{{ p.pickBrand }}">{{ p.maison }}</a>
 <button type="button" class="nom" onClick="{{ p.open }}">{{ p.nom }}</button>
+<p class="cn">{{ p.keyNotes }}</p>
 <div class="prix"><span class="pfrom">{{ p.fromTxt }}</span><b>{{ p.prix }}</b></div>
 <div class="fmts">
 <sc-if value="{{ p.f1.show }}" hint-placeholder-val="{{ true }}"><button type="button" class="fm {{ p.f1.cls }}" onClick="{{ p.f1.pick }}">{{ p.f1.label }}</button></sc-if>
@@ -1476,6 +1505,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 </span>
 <div class="body">
 <button type="button" class="nom" onClick="{{ p.open }}">{{ p.nom }}</button>
+<p class="cn">{{ p.keyNotes }}</p>
 <div class="prix"><span class="pfrom">{{ p.fromTxt }}</span><b>{{ p.prix }}</b></div>
 <div class="fmts">
 <sc-if value="{{ p.f1.show }}" hint-placeholder-val="{{ true }}"><button type="button" class="fm {{ p.f1.cls }}" onClick="{{ p.f1.pick }}">{{ p.f1.label }}</button></sc-if>
@@ -1600,7 +1630,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 <button type="button" class="dt-wish {{ dt.wcls }}" onClick="{{ dt.wtog }}" aria-pressed="{{ dt.wpr }}"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.3 4.4 12.9a4.7 4.7 0 0 1 6.6-6.7l1 1 1-1a4.7 4.7 0 0 1 6.6 6.7z"></path></svg>{{ dt.wtxt }}</button>
 <p class="dt-hand"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8A5A3B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.6-6-10a6 6 0 1 1 12 0c0 4.4-6 10-6 10z"></path><circle cx="12" cy="11" r="2.2"></circle></svg><span>{{ dt.handTxt }}</span></p>
 <a href="{{ dt.share }}" class="dt-share"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.2-4.1A8.5 8.5 0 1 1 8 19.4z"></path><path d="M9 8.6c.3 2.4 2.7 4.9 5.9 5.6l1.2-1.4-2.1-1-.8.7c-.9-.4-1.8-1.3-2.2-2.2l.7-.8-1-2.1z"></path></svg>{{ t.share }}</a>
-<div class="dt-ass"><sc-for list="{{ eng3 }}" as="e" hint-placeholder-count="3"><span>{{ e.txt }}</span></sc-for></div>
+<div class="dt-ass"><sc-for list="{{ engD }}" as="e" hint-placeholder-count="4"><span>{{ e.txt }}</span></sc-for></div>
 </div>
 </div>
 </div>
@@ -1629,7 +1659,7 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 
 <div class="dt-sec">
 <h3 class="dt-h">{{ t.dFams }}</h3>
-<div class="dt-tags"><sc-for list="{{ dt.famTags }}" as="f" hint-placeholder-count="2"><span class="dt-tag">{{ f.txt }}</span></sc-for></div>
+<div class="dt-tags"><sc-for list="{{ dt.famTags }}" as="f" hint-placeholder-count="2"><span class="dt-tag"><img src="{{ f.ico }}" alt="">{{ f.txt }}</span></sc-for></div>
 </div>
 </div>
 
@@ -2487,6 +2517,7 @@ class Component extends DCLogic {
       ['vanille', 'Vanillé', 'Vanilla']
     ];
     const famName = k => { const f = FAMS.find(x => x[0] === k); return f ? L(f[1], f[2]) : k; };
+    const FAMICO = { floral: ['flower', 'jasmin'], musque: ['cloud', '#F4EEE6'], gourmand: ['caramel', ''], vanille: ['vanilla', ''], ambre: ['resin', '#C9843B'], boise: ['wood', '#9C6A3F'], epice: ['cinnamon', ''], fruite: ['berry', '#C8355A'], cuir: ['leather', ''], hesperide: ['citrus', '#F2A03D'], frais: ['leaf', '#7FA06A'], poudre: ['iris', ''], chypre: ['moss', ''], aromatique: ['lavender', ''] };
     const fmt = n => (lang === 'fr' ? n.toFixed(2).replace('.', ',') + ' €' : '€' + n.toFixed(2));
     const plural = (n, fr1, frN, en1, enN) => (lang === 'fr' ? (n > 1 ? frN : fr1) : (n > 1 ? enN : en1));
     const vnum = v => parseInt(v, 10);
@@ -3163,7 +3194,7 @@ class Component extends DCLogic {
         hasFrom: dp.hasFrom, prix: dp.prix, wa: 'https://wa.me/33662859910?text=' + encodeURIComponent(L('Bonjour, je suis intéressé(e) par ' + dp.nom + ' (' + dp.volTxt + ') ' + dp.pAt + '.', 'Hello, I am interested in ' + dp.nom + ' (' + dp.volTxt + ') ' + dp.pAt + '.')),
         share: 'https://wa.me/?text=' + encodeURIComponent(shareTxt),
         f1: dp.f1, f2: dp.f2, f3: dp.f3,
-        famTags: dp.fams.map(k => ({ txt: famName(k) })),
+        famTags: dp.fams.map(k => { const fi = FAMICO[k] || ['sparkle', '']; return { txt: famName(k), ico: this.noteArt(fi[0], fi[1]) }; }),
         hasPyr: !!dp.pyr, hasFlat: !dp.pyr,
         head: dp.pyr ? li(dp.pyr.head) : [], heart: dp.pyr ? li(dp.pyr.heart) : [], base: dp.pyr ? li(dp.pyr.base) : [], flat: dp.flat ? li(dp.flat) : [],
         src: dp.srcNote ? L(dp.srcNote[0], dp.srcNote[1]) : L('Notes relevées sur le site officiel de ' + dp.maison + '.', 'Notes taken from the official ' + dp.maison + ' website.'),
@@ -3549,6 +3580,8 @@ class Component extends DCLogic {
 
     return {
       ...V50, t, waHref, legalOpen: !!lg.title, lg, legalLinks, ftCopy, openCookies: () => this.openLegal('cookies'), closeLegal: () => this.closeLegal(), clearLocal: () => this.clearLocal(), bar: [...barSet, ...barSet].map(txt => ({ txt })), eng: engSet.map(txt => ({ txt })), eng3: engSet.slice(1).map(txt => ({ txt })),
+      engD: [L('Livraison offerte dès 150 € en France métropolitaine', 'Free delivery from €150 in mainland France'), L('Un échantillon mystère offert avec chaque commande', 'A free mystery sample with every order'), L('Paiement sécurisé', 'Secure payment'), L('Conseil personnalisé sur WhatsApp', 'Personal advice on WhatsApp')].map(txt => ({ txt })),
+      sv: { aria: L('Nos engagements', 'Our promises'), t1: L('Sélection de niche', 'Niche selection'), d1: L('Des maisons indépendantes, choisies une à une', 'Independent houses, chosen one by one'), t2: L('Livraison offerte', 'Free delivery'), d2: L('Dès 150 € en France métropolitaine', 'From €150 in mainland France'), t3: L('Échantillons offerts', 'Free samples'), d3: L('Un échantillon mystère à chaque commande', 'A mystery sample with every order'), t4: L('Conseil personnalisé', 'Personal advice'), d4: L('Un conseil sur mesure par WhatsApp', 'Tailored guidance on WhatsApp') },
       frCls: lang === 'fr' ? 'on' : '', enCls: lang === 'en' ? 'on' : '',
       frOn: lang === 'fr' ? 'true' : 'false', enOn: lang === 'en' ? 'true' : 'false',
       setFr: () => this.changeLang('fr'), setEn: () => this.changeLang('en'),
