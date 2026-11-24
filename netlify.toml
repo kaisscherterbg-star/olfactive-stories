@@ -1,0 +1,8 @@
+# Site statique : aucune commande de build, le dossier racine est publié tel quel.
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
