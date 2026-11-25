@@ -11,4 +11,4 @@ Site vitrine et boutique de parfums de niche.
 
 Les adresses du sitemap et des aperçus utilisent `https://olfactistories.netlify.app` ; elles sont à régénérer si un nom de domaine personnalisé est branché.
 
-Dernière mise à jour : 25 novembre 2026 (v61).
+Dernière mise à jour : 25 novembre 2026 (v62).
