@@ -11,4 +11,4 @@ Site vitrine et boutique de parfums de niche.
 
 Adresse du site : `https://olfactive-stories.fr`. Le sitemap, les images d'aperçu et les pages utilisent cette adresse ; en cas de changement de domaine, régénérer le site avec la nouvelle adresse.
 
-Dernière mise à jour : 26 novembre 2026 (v62.2).
+Dernière mise à jour : 26 novembre 2026 (v62.3).
