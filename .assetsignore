@@ -1,0 +1,7 @@
+# Fichiers de configuration : ne pas les publier sur le site
+.assetsignore
+wrangler.jsonc
+netlify.toml
+README.md
+.git
+.DS_Store

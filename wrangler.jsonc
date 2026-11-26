@@ -1,0 +1,10 @@
+{
+  // Site statique : aucun code serveur, tout le dossier racine est publié tel quel.
+  "name": "olfactive-stories",
+  "compatibility_date": "2026-11-26",
+  "assets": {
+    "directory": "./",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}
