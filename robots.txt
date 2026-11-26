@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://olfactistories.netlify.app/sitemap.xml
+Sitemap: https://olfactive-stories.fr/sitemap.xml

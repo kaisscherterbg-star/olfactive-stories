@@ -7,8 +7,8 @@ Site vitrine et boutique de parfums de niche.
 - `og/` : images d'aperçu de partage (WhatsApp, réseaux sociaux), 1200×630.
 - `sitemap.xml`, `robots.txt`, `404.html`, `favicon.svg` : référencement et icônes.
 - `assets/` : visuels ; `vendor/` et `support.js` : bibliothèques d'exécution.
-- Hébergé sur Netlify, déployé automatiquement à chaque mise à jour de la branche `main`. Aucune commande de build : le dossier racine est publié tel quel (voir `netlify.toml`).
+- Hébergé sur Cloudflare (Workers, fichiers statiques), déployé automatiquement à chaque mise à jour de la branche `main`. Aucune commande de build : le dossier racine est publié tel quel (voir `wrangler.jsonc`, `.assetsignore` et `_headers`). `netlify.toml` est conservé pour mémoire (ancien hébergement).
 
-Les adresses du sitemap et des aperçus utilisent `https://olfactistories.netlify.app` ; elles sont à régénérer si un nom de domaine personnalisé est branché.
+Adresse du site : `https://olfactive-stories.fr`. Le sitemap, les images d'aperçu et les pages utilisent cette adresse ; en cas de changement de domaine, régénérer le site avec la nouvelle adresse.
 
-Dernière mise à jour : 25 novembre 2026 (v62).
+Dernière mise à jour : 26 novembre 2026 (v62.2).
