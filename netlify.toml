@@ -18,4 +18,12 @@
     Content-Type = "application/xml; charset=utf-8"
     Cache-Control = "public, max-age=3600"
 
+# Le site est désormais hébergé sur Cloudflare (https://olfactive-stories.fr).
+# Quand Netlify redéploie ce dépôt, l'ancienne adresse redirige toute demande vers le nouveau site (redirection permanente, chemins conservés).
+[[redirects]]
+  from = "/*"
+  to = "https://olfactive-stories.fr/:splat"
+  status = 301
+  force = true
+
 # Les pages /parfum/<nom>/ sont de vrais fichiers ; /404.html est servi automatiquement pour toute adresse inconnue.
