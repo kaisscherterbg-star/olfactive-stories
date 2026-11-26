@@ -974,27 +974,29 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 .coll-hs{margin:26px 0 0;text-align:center}
 /* v62 : sélections — grille de fiches alignée sur la collection (mêmes cartes, mêmes marges), sans fond généré */
 .sel{position:relative;padding:8vh 5vw 2vh}
-.sx{max-width:1200px;margin:0 auto 72px}
-.sx-hd{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding:0 0 20px;margin:0 0 28px;border-bottom:1px solid #D9CFC0}
-.sx-t{min-width:0}
-.sx-over{margin:0;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#8A5A3B;font-weight:500}
-.sx-h{margin:8px 0 8px;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(30px,3.4vw,42px);line-height:1.08;letter-spacing:-.01em;color:#4A3426}
-.sx-sub{margin:0;max-width:56ch;font-size:15px;line-height:1.5;color:#6B635A}
-.sx-all{flex:none;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;padding:0 22px;border:1px solid #4A3426;background:transparent;color:#4A3426;font-family:inherit;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:background .25s,color .25s}
-.sx-all:hover{background:#4A3426;color:#F1ECE4}
-.sx-all svg{transition:transform .25s}
-.sx-all:hover svg{transform:translateX(3px)}
-.sx-all:focus-visible,.coll-mb:focus-visible{outline:2px solid #8A5A3B;outline-offset:3px}
+.slb{max-width:1200px;margin:0 auto 72px}
+.sl-hd{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding:0 0 20px;margin:0 0 28px;border-bottom:1px solid #D9CFC0}
+.sl-t{min-width:0}
+.sl-over{margin:0;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#8A5A3B;font-weight:500}
+.sl-h{margin:8px 0 8px;font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(30px,3.4vw,42px);line-height:1.08;letter-spacing:-.01em;color:#4A3426}
+.sl-sub{margin:0;max-width:56ch;font-size:15px;line-height:1.5;color:#6B635A}
+.sl-all{flex:none;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;padding:0 22px;border:1px solid #4A3426;background:transparent;color:#4A3426;font-family:inherit;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:background .25s,color .25s}
+.sl-all:hover{background:#4A3426;color:#F1ECE4}
+.sl-all svg{transition:transform .25s}
+.sl-all:hover svg{transform:translateX(3px)}
+.sl-all:focus-visible,.coll-mb:focus-visible{outline:2px solid #8A5A3B;outline-offset:3px}
 @media (max-width:899px){
 .sel{padding-top:6vh}
-.sx{margin-bottom:52px}
-.sx-hd{flex-direction:column;align-items:stretch;gap:16px;padding-bottom:18px;margin-bottom:20px}
-.sx-h{font-size:clamp(28px,8vw,34px)}
-.sx-all{width:100%}
+.slb{margin-bottom:52px}
+.sl-hd{flex-direction:column;align-items:stretch;gap:16px;padding-bottom:18px;margin-bottom:20px}
+.sl-h{font-size:clamp(28px,8vw,34px)}
+.sl-all{width:100%}
 }
-@media (prefers-reduced-motion:reduce){.sx-all,.sx-all svg{transition:none}}
+@media (prefers-reduced-motion:reduce){.sl-all,.sl-all svg{transition:none}}
 /* v62 : fiches alignées au millimètre — maison, nom, notes, prix, prix public, formats et bouton ont la même hauteur d'une fiche à l'autre (sous-grille) */
 .card .nom{text-wrap:balance}
+/* v62 : le prix des suggestions de recherche ne doit pas hériter de l'overlay d'étincelles (.sp) */
+.si .sp{position:static;inset:auto;z-index:auto;overflow:visible}
 .prix{column-gap:0}
 .pfrom .sc-interp:not(:empty){margin-right:10px}
 @supports (grid-template-rows: subgrid) {
@@ -1244,12 +1246,12 @@ a,button,[role=button],.chip,.fm{touch-action:manipulation;-webkit-tap-highlight
 
 <section class="sel" id="selections" aria-label="{{ selAria }}">
 <sc-for list="{{ selBlocks }}" as="bk" hint-placeholder-count="3">
-<div class="sx">
-<div class="sx-hd">
-<div class="sx-t"><p class="sx-over">{{ bk.over }}</p><h2 class="sx-h">{{ bk.title }}</h2><p class="sx-sub">{{ bk.sub }}</p></div>
-<button type="button" class="sx-all" onClick="{{ bk.see }}"><span>{{ bk.seeTxt }}</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+<div class="slb">
+<div class="sl-hd">
+<div class="sl-t"><p class="sl-over">{{ bk.over }}</p><h2 class="sl-h">{{ bk.title }}</h2><p class="sl-sub">{{ bk.sub }}</p></div>
+<button type="button" class="sl-all" onClick="{{ bk.see }}"><span>{{ bk.seeTxt }}</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
 </div>
-<div class="grid sx-g">
+<div class="grid sl-g">
 <sc-for list="{{ bk.cards }}" as="p" hint-placeholder-count="4">
 <article class="card">
 <span class="ph">
