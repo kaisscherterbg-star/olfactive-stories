@@ -2,8 +2,8 @@
 
 Site vitrine et boutique de parfums de niche.
 
-- `index.html` : la boutique (page unique, lien direct vers une fiche : `/#p=<nom-du-parfum>`).
-- `parfum/<nom-du-parfum>/index.html` : une page par parfum (62), avec sa propre adresse, ses notes, ses prix et son aperçu de partage.
+- `index.html` : la boutique (page unique). Ouvrir une fiche affiche l'adresse `/parfum/<nom-du-parfum>/` (retour arrière géré) ; le lien direct `/#p=<nom-du-parfum>` ouvre aussi la fiche.
+- `parfum/<nom-du-parfum>/index.html` : une page par parfum (64), avec sa propre adresse, ses notes, ses prix et son aperçu de partage.
 - `og/` : images d'aperçu de partage (WhatsApp, réseaux sociaux), 1200×630.
 - `sitemap.xml`, `robots.txt`, `404.html`, `favicon.svg` : référencement et icônes.
 - `assets/` : visuels ; `vendor/` et `support.js` : bibliothèques d'exécution.
@@ -11,4 +11,4 @@ Site vitrine et boutique de parfums de niche.
 
 Adresse du site : `https://olfactive-stories.fr`. Le sitemap, les images d'aperçu et les pages utilisent cette adresse ; en cas de changement de domaine, régénérer le site avec la nouvelle adresse.
 
-Dernière mise à jour : 26 novembre 2026 (v62.3).
+Dernière mise à jour : 27 novembre 2026 (v62.4).
